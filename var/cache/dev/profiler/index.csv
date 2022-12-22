@@ -1,0 +1,11 @@
+16fcb0,192.168.5.75,GET,http://clientlegersymf.com/public/test,1671697378,7eae75,404
+7eae75,192.168.5.75,GET,http://clientlegersymf.com/public/test,1671697378,,404
+f2c696,192.168.5.75,GET,http://clientlegersymf.com/,1671698521,,404
+8d6df9,192.168.5.75,GET,http://clientlegersymf.com/,1671698533,,404
+964f96,192.168.5.75,GET,http://clientlegersymf.com/public/index.php,1671698553,f6444b,404
+f6444b,192.168.5.75,GET,http://clientlegersymf.com/public/index.php,1671698553,,404
+5f723c,192.168.5.75,GET,http://clientlegersymf.com/test,1671698564,5757ad,500
+5757ad,192.168.5.75,GET,http://clientlegersymf.com/test,1671698564,,500
+ecda61,192.168.5.75,GET,http://clientlegersymf.com/test,1671698659,49a11e,500
+49a11e,192.168.5.75,GET,http://clientlegersymf.com/test,1671698659,,500
+d3a937,192.168.5.75,GET,http://clientlegersymf.com/test,1671698696,,200
