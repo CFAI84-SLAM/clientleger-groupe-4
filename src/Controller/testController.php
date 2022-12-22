@@ -12,6 +12,7 @@ class testController extends AbstractController {
 
     public function test()
     {
-        return new Response('<html><body>test</body></html>');
+        $test = 10;
+        return $this->render('test.html.twig', ['testvar' => $test]);
     }
 }

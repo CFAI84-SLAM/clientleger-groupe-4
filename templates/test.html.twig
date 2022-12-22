@@ -1,0 +1,17 @@
+{# templates/test.html.twig #}
+
+<head>
+    <meta charset = "UTF-8">
+    {% block stylesheets %}
+        <link rel="stylesheet" href={{ asset('Views/test.css') }}>
+    {% endblock %}
+</head>
+
+<header>
+    <div class="header">
+            <h1>FastSushi</h1>
+    </div>
+</header>
+{% block body %}
+<h1>{{ testvar }}</h1>
+{% endblock %}
