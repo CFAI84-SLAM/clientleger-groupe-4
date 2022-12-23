@@ -60,10 +60,19 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         <div class=\"categories\">Plats</div>
         <div class=\"categories\">Desserts</div>
     </div>
+    <div class=\"featuredProducts\">
+        <h2>Produits phares</h2>
+        <div class=\"productsDisp\">
+
+        </div>
+    </div>
 </header>
-";
-        // line 20
+<body>
+    ";
+        // line 27
         $this->displayBlock('body', $context, $blocks);
+        // line 30
+        echo "</body>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -95,7 +104,7 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
     }
 
-    // line 20
+    // line 27
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -105,11 +114,11 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 21
-        echo "<h1>";
-        echo twig_escape_filter($this->env, (isset($context["testvar"]) || array_key_exists("testvar", $context) ? $context["testvar"] : (function () { throw new RuntimeError('Variable "testvar" does not exist.', 21, $this->source); })()), "html", null, true);
+        // line 28
+        echo "    <h1>";
+        echo twig_escape_filter($this->env, (isset($context["testvar"]) || array_key_exists("testvar", $context) ? $context["testvar"] : (function () { throw new RuntimeError('Variable "testvar" does not exist.', 28, $this->source); })()), "html", null, true);
         echo "</h1>
-";
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -125,7 +134,7 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
     public function getDebugInfo()
     {
-        return array (  109 => 21,  99 => 20,  86 => 6,  76 => 5,  66 => 20,  52 => 8,  50 => 5,  45 => 2,);
+        return array (  118 => 28,  108 => 27,  95 => 6,  85 => 5,  75 => 30,  73 => 27,  52 => 8,  50 => 5,  45 => 2,);
     }
 
     public function getSourceContext()
@@ -148,9 +157,17 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         <div class=\"categories\">Plats</div>
         <div class=\"categories\">Desserts</div>
     </div>
+    <div class=\"featuredProducts\">
+        <h2>Produits phares</h2>
+        <div class=\"productsDisp\">
+
+        </div>
+    </div>
 </header>
-{% block body %}
-<h1>{{ testvar }}</h1>
-{% endblock %}", "test.html.twig", "/var/www/ClientLegerSymf/templates/test.html.twig");
+<body>
+    {% block body %}
+    <h1>{{ testvar }}</h1>
+    {% endblock %}
+</body>", "test.html.twig", "/var/www/ClientLegerSymf/templates/test.html.twig");
     }
 }

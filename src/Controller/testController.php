@@ -12,6 +12,7 @@ class testController extends AbstractController {
 
     public function test()
     {
+        $products = ['test1', 'test2', 'test3'];
         $test = 10;
         return $this->render('test.html.twig', ['testvar' => $test]);
     }
