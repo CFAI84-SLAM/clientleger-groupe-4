@@ -55,9 +55,14 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
     <div class=\"header\">
             <h1>FastSushi</h1>
     </div>
+    <div class=\"menu\">
+        <div class=\"categories\">Entrées</div>
+        <div class=\"categories\">Plats</div>
+        <div class=\"categories\">Desserts</div>
+    </div>
 </header>
 ";
-        // line 15
+        // line 20
         $this->displayBlock('body', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -90,7 +95,7 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
     }
 
-    // line 15
+    // line 20
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -100,9 +105,9 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 16
+        // line 21
         echo "<h1>";
-        echo twig_escape_filter($this->env, (isset($context["testvar"]) || array_key_exists("testvar", $context) ? $context["testvar"] : (function () { throw new RuntimeError('Variable "testvar" does not exist.', 16, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["testvar"]) || array_key_exists("testvar", $context) ? $context["testvar"] : (function () { throw new RuntimeError('Variable "testvar" does not exist.', 21, $this->source); })()), "html", null, true);
         echo "</h1>
 ";
         
@@ -120,7 +125,7 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
     public function getDebugInfo()
     {
-        return array (  104 => 16,  94 => 15,  81 => 6,  71 => 5,  61 => 15,  52 => 8,  50 => 5,  45 => 2,);
+        return array (  109 => 21,  99 => 20,  86 => 6,  76 => 5,  66 => 20,  52 => 8,  50 => 5,  45 => 2,);
     }
 
     public function getSourceContext()
@@ -137,6 +142,11 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 <header>
     <div class=\"header\">
             <h1>FastSushi</h1>
+    </div>
+    <div class=\"menu\">
+        <div class=\"categories\">Entrées</div>
+        <div class=\"categories\">Plats</div>
+        <div class=\"categories\">Desserts</div>
     </div>
 </header>
 {% block body %}

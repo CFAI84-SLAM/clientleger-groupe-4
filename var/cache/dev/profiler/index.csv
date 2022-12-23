@@ -29,3 +29,15 @@ c2a77e,192.168.5.75,GET,http://clientlegersymf.com/test,1671706195,,200
 4df2d9,192.168.5.75,GET,http://clientlegersymf.com/test,1671706269,,200
 019605,192.168.5.75,GET,http://clientlegersymf.com/test,1671706380,,200
 17660f,192.168.5.75,GET,http://clientlegersymf.com/test,1671706426,,200
+bd0b89,192.168.5.75,GET,http://clientlegersymf.com/,1671781830,,404
+331b41,192.168.5.75,GET,http://clientlegersymf.com/favicon.ico,1671781832,dfab2a,404
+dfab2a,192.168.5.75,GET,http://clientlegersymf.com/favicon.ico,1671781832,,404
+981710,192.168.5.75,GET,http://clientlegersymf.com/test,1671781840,,200
+541a12,192.168.5.75,GET,http://clientlegersymf.com/test,1671784085,,200
+623eb6,192.168.5.75,GET,http://clientlegersymf.com/test,1671784085,,200
+7cb680,192.168.5.75,GET,http://clientlegersymf.com/test,1671784086,,200
+e8480e,192.168.5.75,GET,http://clientlegersymf.com/test,1671784086,,200
+4b02a2,192.168.5.75,GET,http://clientlegersymf.com/test,1671784086,,200
+9f5443,192.168.5.75,GET,http://clientlegersymf.com/test,1671784336,,200
+cf73c7,192.168.5.75,GET,http://clientlegersymf.com/test,1671784346,,200
+189c41,192.168.5.75,GET,http://clientlegersymf.com/test,1671784425,,200

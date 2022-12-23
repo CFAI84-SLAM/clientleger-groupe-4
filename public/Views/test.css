@@ -4,3 +4,10 @@
     background: #ff8282;
     margin: 0%;
 }
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: #f57575;
+}
