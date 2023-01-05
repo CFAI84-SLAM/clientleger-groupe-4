@@ -24,12 +24,15 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
         $this->blocks = [
-            'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
         ];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        // line 3
+        return "base.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -41,38 +44,8 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "test.html.twig"));
 
-        // line 2
-        echo "
-<head>
-    <meta charset = \"UTF-8\">
-    ";
-        // line 5
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 8
-        echo "</head>
-
-<header>
-    <div class=\"header\">
-            <h1>FastSushi</h1>
-    </div>
-    <div class=\"menu\">
-        <div class=\"categories\">Entrées</div>
-        <div class=\"categories\">Plats</div>
-        <div class=\"categories\">Desserts</div>
-    </div>
-    <div class=\"featuredProducts\">
-        <h2>Produits phares</h2>
-        <div class=\"productsDisp\">
-
-        </div>
-    </div>
-</header>
-<body>
-    ";
-        // line 27
-        $this->displayBlock('body', $context, $blocks);
-        // line 30
-        echo "</body>";
+        $this->parent = $this->loadTemplate("base.html.twig", "test.html.twig", 3);
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -82,29 +55,6 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
     }
 
     // line 5
-    public function block_stylesheets($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
-
-        // line 6
-        echo "        <link rel=\"stylesheet\" href=";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Views/test.css"), "html", null, true);
-        echo ">
-    ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 27
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -114,10 +64,14 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 28
-        echo "    <h1>";
-        echo twig_escape_filter($this->env, (isset($context["testvar"]) || array_key_exists("testvar", $context) ? $context["testvar"] : (function () { throw new RuntimeError('Variable "testvar" does not exist.', 28, $this->source); })()), "html", null, true);
-        echo "</h1>
+        // line 6
+        echo "
+        <div class=\"featuredProducts\">
+            <h2>Produits phares</h2>
+            <div class=\"productsDisp\">
+
+            </div>
+        </div>
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -132,42 +86,31 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
         return "test.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  118 => 28,  108 => 27,  95 => 6,  85 => 5,  75 => 30,  73 => 27,  52 => 8,  50 => 5,  45 => 2,);
+        return array (  68 => 6,  58 => 5,  35 => 3,);
     }
 
     public function getSourceContext()
     {
         return new Source("{# templates/test.html.twig #}
 
-<head>
-    <meta charset = \"UTF-8\">
-    {% block stylesheets %}
-        <link rel=\"stylesheet\" href={{ asset('Views/test.css') }}>
-    {% endblock %}
-</head>
+{% extends 'base.html.twig' %}
 
-<header>
-    <div class=\"header\">
-            <h1>FastSushi</h1>
-    </div>
-    <div class=\"menu\">
-        <div class=\"categories\">Entrées</div>
-        <div class=\"categories\">Plats</div>
-        <div class=\"categories\">Desserts</div>
-    </div>
-    <div class=\"featuredProducts\">
-        <h2>Produits phares</h2>
-        <div class=\"productsDisp\">
-
-        </div>
-    </div>
-</header>
-<body>
     {% block body %}
-    <h1>{{ testvar }}</h1>
+
+        <div class=\"featuredProducts\">
+            <h2>Produits phares</h2>
+            <div class=\"productsDisp\">
+
+            </div>
+        </div>
     {% endblock %}
-</body>", "test.html.twig", "/var/www/ClientLegerSymf/templates/test.html.twig");
+", "test.html.twig", "/var/www/ClientLegerSymf/templates/test.html.twig");
     }
 }
