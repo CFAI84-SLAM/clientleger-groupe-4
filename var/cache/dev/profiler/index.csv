@@ -44,3 +44,6 @@ cf73c7,192.168.5.75,GET,http://clientlegersymf.com/test,1671784346,,200
 ded2a6,192.168.5.75,GET,http://clientlegersymf.com/test,1671792582,,200
 7c69e9,192.168.5.75,GET,http://clientlegersymf.com/test,1671800448,,200
 71fc63,192.168.5.75,GET,http://clientlegersymf.com/test,1671803458,,200
+766573,192.168.5.75,GET,http://clientlegersymf.com/test,1672748814,,200
+e429cf,192.168.5.75,GET,http://clientlegersymf.com/favicon.ico,1672748818,8469c8,404
+8469c8,192.168.5.75,GET,http://clientlegersymf.com/favicon.ico,1672748818,,404
