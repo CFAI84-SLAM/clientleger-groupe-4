@@ -115,7 +115,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
                     <img id=\"shoppingCart\" src=";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shopping-cart.png"), "html", null, true);
-        echo " width='45' heigth=\"45\">
+        echo " width='35' heigth=\"35\">
                 </div>
             </div>
             <div class=\"menu\">
@@ -178,7 +178,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
             <div class=\"header\">
                 <h1>FastSushi</h1>
                 <div class=\"logo\">
-                    <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='45' heigth=\"45\">
+                    <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='35' heigth=\"35\">
                 </div>
             </div>
             <div class=\"menu\">
