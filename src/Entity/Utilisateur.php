@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Utilisateur
@@ -12,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Utilisateur")
  * @ORM\Entity
  */
-class Utilisateur
+class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
      * @var int
@@ -33,9 +34,9 @@ class Utilisateur
     /**
      * @var string|null
      *
-     * @ORM\Column(name="prénom", type="string", length=50, nullable=true)
+     * @ORM\Column(name="prenom", type="string", length=50, nullable=true)
      */
-    private $prénom;
+    private $prenom;
 
     /**
      * @var int|null
@@ -45,45 +46,53 @@ class Utilisateur
     private $tel;
 
     /**
-     * @var string|null
+     * @var string
      *
-     * @ORM\Column(name="mail", type="string", length=50, nullable=true)
+     * @ORM\Column(name="email", type="string", length=255, nullable=false)
      */
-    private $mail;
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="roles", type="json", length=255, nullable=false)
+     */
+    private $roles = [];
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="mdp", type="string", length=50, nullable=true)
+     * @ORM\Column(name="adresse", type="string", length=50, nullable=true)
      */
-    private $mdp;
+    private $adresse;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \DateTime|null
      *
-     * @ORM\ManyToMany(targetEntity="Menus", inversedBy="idUtilisateur")
-     * @ORM\JoinTable(name="choisir",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="Id_Utilisateur", referencedColumnName="Id_Utilisateur")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="Id_Menus", referencedColumnName="Id_Menus")
-     *   }
-     * )
+     * @ORM\Column(name="dateNaissance", type="date", nullable=true)
      */
-    private $idMenus = array();
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idMenus = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    private $datenaissance;
 
     public function getIdUtilisateur(): ?int
     {
         return $this->idUtilisateur;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
     }
 
     public function getNom(): ?string
@@ -98,14 +107,14 @@ class Utilisateur
         return $this;
     }
 
-    public function getPrénom(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->prénom;
+        return $this->prenom;
     }
 
-    public function setPrénom(?string $prénom): self
+    public function setPrenom(?string $prenom): self
     {
-        $this->prénom = $prénom;
+        $this->prenom = $prenom;
 
         return $this;
     }
@@ -122,52 +131,101 @@ class Utilisateur
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(?string $mail): self
+    public function setEmail(string $email): self
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getMdp(): ?string
+    public function getPassword(): ?string
     {
-        return $this->mdp;
+        return $this->password;
     }
 
-    public function setMdp(?string $mdp): self
+    public function setPassword(string $password): self
     {
-        $this->mdp = $mdp;
+        $this->password = $password;
+
+        return $this;
+    }
+
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?string $adresse): self
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getDatenaissance(): ?\DateTimeInterface
+    {
+        return $this->datenaissance;
+    }
+
+    public function setDatenaissance(?\DateTimeInterface $datenaissance): self
+    {
+        $this->datenaissance = $datenaissance;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Menus>
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
      */
-    public function getIdMenus(): Collection
+    public function getUsername(): string
     {
-        return $this->idMenus;
+        return (string) $this->email;
     }
 
-    public function addIdMenu(Menus $idMenu): self
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        if (!$this->idMenus->contains($idMenu)) {
-            $this->idMenus[] = $idMenu;
-        }
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
 
         return $this;
     }
 
-    public function removeIdMenu(Menus $idMenu): self
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
     {
-        $this->idMenus->removeElement($idMenu);
-
-        return $this;
+        return null;
     }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
 
 }

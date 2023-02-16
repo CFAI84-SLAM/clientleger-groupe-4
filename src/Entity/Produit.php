@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Produit
  *
- * @ORM\Table(name="Produit")
+ * @ORM\Table(name="Produit", indexes={@ORM\Index(name="Id_Catégorie", columns={"Id_Catégorie"})})
  * @ORM\Entity
  */
 class Produit
@@ -31,77 +31,57 @@ class Produit
     private $nom;
 
     /**
-     * @var int|null
+     * @var string|null
      *
-     * @ORM\Column(name="Catégorie", type="integer", nullable=true)
+     * @ORM\Column(name="prixHT", type="decimal", precision=15, scale=3, nullable=true)
      */
-    private $catégorie;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="custom", type="integer", nullable=true)
-     */
-    private $custom;
+    private $prixht;
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="prix_HT", type="string", length=50, nullable=true)
+     * @ORM\Column(name="tva", type="decimal", precision=15, scale=2, nullable=true)
      */
-    private $prixHt;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="ventes", type="integer", nullable=true)
-     */
-    private $ventes;
+    private $tva;
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="Photo", type="string", length=50, nullable=true)
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
     private $photo;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var \Catégorie
      *
-     * @ORM\ManyToMany(targetEntity="Menus", inversedBy="idProduit")
-     * @ORM\JoinTable(name="faire_partie",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="Id_Produit", referencedColumnName="Id_Produit")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="Id_Menus", referencedColumnName="Id_Menus")
-     *   }
-     * )
+     * @ORM\ManyToOne(targetEntity="Catégorie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Id_Catégorie", referencedColumnName="Id_Catégorie")
+     * })
      */
-    private $idMenus = array();
+    private $idCatégorie;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Ingrédients", inversedBy="idProduit")
-     * @ORM\JoinTable(name="composer",
+     * @ORM\ManyToMany(targetEntity="Commandes", inversedBy="idProduit")
+     * @ORM\JoinTable(name="ligne_commande",
      *   joinColumns={
      *     @ORM\JoinColumn(name="Id_Produit", referencedColumnName="Id_Produit")
      *   },
      *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="Id_Ingredients", referencedColumnName="Id_Ingredients")
+     *     @ORM\JoinColumn(name="Id_Commandes", referencedColumnName="Id_Commandes")
      *   }
      * )
      */
-    private $idIngrédients = array();
+    private $idCommandes = array();
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->idMenus = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->idIngrédients = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idCommandes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function getIdProduit(): ?int
@@ -121,50 +101,26 @@ class Produit
         return $this;
     }
 
-    public function getCatégorie(): ?int
+    public function getPrixht(): ?string
     {
-        return $this->catégorie;
+        return $this->prixht;
     }
 
-    public function setCatégorie(?int $catégorie): self
+    public function setPrixht(?string $prixht): self
     {
-        $this->catégorie = $catégorie;
+        $this->prixht = $prixht;
 
         return $this;
     }
 
-    public function getCustom(): ?int
+    public function getTva(): ?string
     {
-        return $this->custom;
+        return $this->tva;
     }
 
-    public function setCustom(?int $custom): self
+    public function setTva(?string $tva): self
     {
-        $this->custom = $custom;
-
-        return $this;
-    }
-
-    public function getPrixHt(): ?string
-    {
-        return $this->prixHt;
-    }
-
-    public function setPrixHt(?string $prixHt): self
-    {
-        $this->prixHt = $prixHt;
-
-        return $this;
-    }
-
-    public function getVentes(): ?int
-    {
-        return $this->ventes;
-    }
-
-    public function setVentes(?int $ventes): self
-    {
-        $this->ventes = $ventes;
+        $this->tva = $tva;
 
         return $this;
     }
@@ -181,50 +137,38 @@ class Produit
         return $this;
     }
 
-    /**
-     * @return Collection<int, Menus>
-     */
-    public function getIdMenus(): Collection
+    public function getIdCatégorie(): ?Catégorie
     {
-        return $this->idMenus;
+        return $this->idCatégorie;
     }
 
-    public function addIdMenu(Menus $idMenu): self
+    public function setIdCatégorie(?Catégorie $idCatégorie): self
     {
-        if (!$this->idMenus->contains($idMenu)) {
-            $this->idMenus[] = $idMenu;
-        }
-
-        return $this;
-    }
-
-    public function removeIdMenu(Menus $idMenu): self
-    {
-        $this->idMenus->removeElement($idMenu);
+        $this->idCatégorie = $idCatégorie;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Ingrédients>
+     * @return Collection<int, Commandes>
      */
-    public function getIdIngrédients(): Collection
+    public function getIdCommandes(): Collection
     {
-        return $this->idIngrédients;
+        return $this->idCommandes;
     }
 
-    public function addIdIngrDient(Ingrédients $idIngrDient): self
+    public function addIdCommande(Commandes $idCommande): self
     {
-        if (!$this->idIngrédients->contains($idIngrDient)) {
-            $this->idIngrédients[] = $idIngrDient;
+        if (!$this->idCommandes->contains($idCommande)) {
+            $this->idCommandes[] = $idCommande;
         }
 
         return $this;
     }
 
-    public function removeIdIngrDient(Ingrédients $idIngrDient): self
+    public function removeIdCommande(Commandes $idCommande): self
     {
-        $this->idIngrédients->removeElement($idIngrDient);
+        $this->idCommandes->removeElement($idCommande);
 
         return $this;
     }

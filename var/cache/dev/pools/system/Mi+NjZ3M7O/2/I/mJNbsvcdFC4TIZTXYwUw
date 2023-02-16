@@ -4,6 +4,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     $o = [
         clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Table'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Table')),
         clone ($p['Doctrine\\ORM\\Mapping\\Index'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Index')),
+        clone $p['Doctrine\\ORM\\Mapping\\Index'],
         clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
     ],
     null,
@@ -11,23 +12,28 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
         'stdClass' => [
             'name' => [
                 'Commandes',
-                'Id_Menus',
+                'Id_Utilisateur',
+                'Id_Utilisateur_1',
             ],
             'indexes' => [
                 [
                     $o[1],
+                    $o[2],
                 ],
             ],
             'columns' => [
                 1 => [
-                    'Id_Menus',
+                    'Id_Utilisateur',
+                ],
+                [
+                    'Id_Utilisateur_1',
                 ],
             ],
         ],
     ],
     [
         $o[0],
-        $o[2],
+        $o[3],
     ],
     []
 ); }];

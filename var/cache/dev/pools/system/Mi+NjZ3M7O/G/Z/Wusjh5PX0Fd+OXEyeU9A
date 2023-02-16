@@ -8,13 +8,13 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'stdClass' => [
             'name' => [
-                'Photo',
+                'photo',
             ],
             'type' => [
                 'string',
             ],
             'length' => [
-                50,
+                255,
             ],
             'precision' => [
                 null,
