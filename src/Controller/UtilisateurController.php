@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 /**
  * @Route("/utilisateur")
@@ -40,7 +41,7 @@ class UtilisateurController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur, $utilisateur->getPassword()));
+            //$utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur, $utilisateur->getPassword()));
             $entityManager->persist($utilisateur);
             $entityManager->flush();
 
@@ -49,7 +50,7 @@ class UtilisateurController extends AbstractController
 
         return $this->renderForm('utilisateur/new.html.twig', [
             'utilisateur' => $utilisateur,
-            'form' => $form,
+             'form' => $form,
         ]);
     }
 

@@ -17,7 +17,7 @@ class UtilisateurType extends AbstractType
             ->add('tel')
             ->add('email')
             ->add('password')
-            ->add('roles')
+            //->add('roles')
             ->add('adresse')
             ->add('datenaissance')
         ;

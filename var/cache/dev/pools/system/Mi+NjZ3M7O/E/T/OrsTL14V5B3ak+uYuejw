@@ -21,6 +21,11 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'scale' => [
                 null,
             ],
+            'options' => [
+                [
+                    'default' => '1',
+                ],
+            ],
             'strategy' => [
                 2 => 'IDENTITY',
             ],

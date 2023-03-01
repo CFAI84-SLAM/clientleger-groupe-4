@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Utilisateur
  *
- * @ORM\Table(name="Utilisateur")
+ * @ORM\Table(name="Utilisateur", uniqueConstraints={@ORM\UniqueConstraint(name="email", columns={"email"})})
  * @ORM\Entity
  */
 class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
@@ -27,16 +27,16 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string|null
      *
-     * @ORM\Column(name="nom", type="string", length=50, nullable=true)
+     * @ORM\Column(name="nom", type="string", length=50, nullable=true, options={"default" ="NULL"})
      */
-    private $nom;
+    private $nom = 'NULL';
 
     /**
      * @var string|null
      *
-     * @ORM\Column(name="prenom", type="string", length=50, nullable=true)
+     * @ORM\Column(name="prenom", type="string", length=50, nullable=true, options={"default" ="NULL"})
      */
-    private $prenom;
+    private $prenom = 'NULL';
 
     /**
      * @var int|null
@@ -69,16 +69,16 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string|null
      *
-     * @ORM\Column(name="adresse", type="string", length=50, nullable=true)
+     * @ORM\Column(name="adresse", type="string", length=50, nullable=true, options={"default" ="NULL"})
      */
-    private $adresse;
+    private $adresse = 'NULL';
 
     /**
      * @var \DateTime|null
      *
-     * @ORM\Column(name="dateNaissance", type="date", nullable=true)
+     * @ORM\Column(name="dateNaissance", type="date", nullable=true, options={"default" ="NULL"})
      */
-    private $datenaissance;
+    private $datenaissance = 'NULL';
 
     public function getIdUtilisateur(): ?int
     {
@@ -170,7 +170,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getDatenaissance(): ?\DateTimeInterface
     {
-        return $this->datenaissance;
+        return $this->datenaissance != "NULL"  ? $this->datenaissance : null;
     }
 
     public function setDatenaissance(?\DateTimeInterface $datenaissance): self
