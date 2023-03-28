@@ -1,17 +1,51 @@
+@font-face {
+    font-family: 'quicksandlight';
+    src: url('./fonts/quicksand_light-webfont.woff2') format('woff2'),
+    url('./fonts/quicksand_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'comforta';
+    src: url('./fonts/comfortaa-regular-webfont.woff2') format('woff2'),
+    url('./fonts/comfortaa-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 h1 {
     display: inline-block;
+
 }
 
 body {
     margin: 0%;
+    background: #e9f5ff;
+    font-family: comforta;
 }
 
+.main-title {
+    font-family: quicksandlight;
+}
+.centered {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
 
 .header {
     background: #ff8282;
 }
+
 .headerwrap {
-    display: flex;
+    display: block;
     justify-content: center;
     background: #ff8282;
     margin: 0%;
@@ -31,6 +65,16 @@ body {
 }
 
 .logo {
+    position: relative;
+    top: -3em;
+    left: 90%;
+}
+
+.login {
+    height: 2em;
+    border-bottom: solid 2px;
     display: flex;
+    justify-content: flex-end;
+    padding: 0 10em 0 10em;
     align-items: center;
 }
