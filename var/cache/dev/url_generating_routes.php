@@ -10,7 +10,7 @@ return [
     'app_utilisateur_show' => [['idUtilisateur'], ['_controller' => 'App\\Controller\\UtilisateurController::show'], [], [['variable', '/', '[^/]++', 'idUtilisateur', true], ['text', '/utilisateur']], [], [], []],
     'app_utilisateur_edit' => [['idUtilisateur'], ['_controller' => 'App\\Controller\\UtilisateurController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'idUtilisateur', true], ['text', '/utilisateur']], [], [], []],
     'app_utilisateur_delete' => [['idUtilisateur'], ['_controller' => 'App\\Controller\\UtilisateurController::delete'], [], [['variable', '/', '[^/]++', 'idUtilisateur', true], ['text', '/utilisateur']], [], [], []],
-    'test' => [[], ['_controller' => 'App\\Controller\\testController::test'], [], [['text', '/test']], [], [], []],
+    'accueil' => [[], ['_controller' => 'App\\Controller\\testController::test'], [], [['text', '/']], [], [], []],
     'api_genid' => [['id'], ['_controller' => 'api_platform.action.not_exposed', '_api_respond' => 'true'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/.well-known/genid']], [], [], []],
     'api_entrypoint' => [['index', '_format'], ['_controller' => 'api_platform.action.entrypoint', '_format' => '', '_api_respond' => 'true', 'index' => 'index'], ['index' => 'index'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', 'index', 'index', true], ['text', '/api']], [], [], []],
     'api_doc' => [['_format'], ['_controller' => 'api_platform.action.documentation', '_format' => '', '_api_respond' => 'true'], [], [['variable', '.', '[^/]++', '_format', true], ['text', '/api/docs']], [], [], []],

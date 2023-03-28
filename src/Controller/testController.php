@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class testController extends AbstractController {
     /**
-     * @Route("/test", name="test")
+     * @Route("/", name="accueil")
      */
 
     public function test()
@@ -16,4 +16,6 @@ class testController extends AbstractController {
         $test = 10;
         return $this->render('test.html.twig', ['testvar' => $test]);
     }
+
+
 }

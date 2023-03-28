@@ -10,16 +10,20 @@
     <header>
         {% block header %}
             <div class="header">
-                <h1>FastSushi</h1>
+                <div class="headerwrap">
+                    <h1>FastSushi</h1>
+
+                </div>
                 <div class="logo">
                     <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">
                 </div>
             </div>
-            <div class="menu">
+
+            <nav class="menu">
                 <div class="categories">Entrées</div>
                 <div class="categories">Plats</div>
                 <div class="categories">Desserts</div>
-            </div>
+            </nav>
         {% endblock %}
     </header>
     <body>

@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `Catégorie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Catégorie` (
-  `Id_Catégorie` int(11) NOT NULL,
+  `Id_Catégorie` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id_Catégorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -46,7 +46,7 @@ DROP TABLE IF EXISTS `Commandes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Commandes` (
-  `Id_Commandes` int(11) NOT NULL,
+  `Id_Commandes` int(11) NOT NULL AUTO_INCREMENT,
   `etat` varchar(50) DEFAULT NULL,
   `date_de_commande` datetime DEFAULT NULL,
   `Id_Utilisateur` int(11) DEFAULT NULL,
@@ -106,7 +106,7 @@ DROP TABLE IF EXISTS `Produit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Produit` (
-  `Id_Produit` int(11) NOT NULL,
+  `Id_Produit` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) DEFAULT NULL,
   `prixHT` decimal(15,3) DEFAULT NULL,
   `tva` decimal(15,2) DEFAULT NULL,
@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `Utilisateur`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Utilisateur` (
-  `Id_Utilisateur` int(11) NOT NULL,
+  `Id_Utilisateur` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) DEFAULT NULL,
   `prenom` varchar(50) DEFAULT NULL,
   `tel` int(11) DEFAULT NULL,
@@ -145,7 +145,7 @@ CREATE TABLE `Utilisateur` (
   `adresse` varchar(50) DEFAULT NULL,
   `dateNaissance` date DEFAULT NULL,
   PRIMARY KEY (`Id_Utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +154,7 @@ CREATE TABLE `Utilisateur` (
 
 LOCK TABLES `Utilisateur` WRITE;
 /*!40000 ALTER TABLE `Utilisateur` DISABLE KEYS */;
+INSERT INTO `Utilisateur` VALUES (1,'test','test',676511451,'test@test.test','test','[]','test','2022-02-03'),(2,'esf','segqrh',96582562,'test@test.teste','ezf','[]','zef','2019-03-09');
 /*!40000 ALTER TABLE `Utilisateur` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +167,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-27 14:16:51
+-- Dump completed on 2023-03-28  9:55:40

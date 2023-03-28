@@ -1,4 +1,16 @@
+h1 {
+    display: inline-block;
+}
+
+body {
+    margin: 0%;
+}
+
+
 .header {
+    background: #ff8282;
+}
+.headerwrap {
     display: flex;
     justify-content: center;
     background: #ff8282;

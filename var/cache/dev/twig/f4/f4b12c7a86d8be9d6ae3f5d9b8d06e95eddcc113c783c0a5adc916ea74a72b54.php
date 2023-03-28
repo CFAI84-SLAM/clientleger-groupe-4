@@ -57,13 +57,13 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         ";
         // line 11
         $this->displayBlock('header', $context, $blocks);
-        // line 24
+        // line 28
         echo "    </header>
     <body>
         ";
-        // line 26
+        // line 30
         $this->displayBlock('body', $context, $blocks);
-        // line 28
+        // line 32
         echo "    </body>
 </html>
 ";
@@ -110,19 +110,23 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
         // line 12
         echo "            <div class=\"header\">
-                <h1>FastSushi</h1>
+                <div class=\"headerwrap\">
+                    <h1>FastSushi</h1>
+
+                </div>
                 <div class=\"logo\">
                     <img id=\"shoppingCart\" src=";
-        // line 15
+        // line 18
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shopping-cart.png"), "html", null, true);
         echo " width='35' heigth=\"35\">
                 </div>
             </div>
-            <div class=\"menu\">
+
+            <nav class=\"menu\">
                 <div class=\"categories\">Entrées</div>
                 <div class=\"categories\">Plats</div>
                 <div class=\"categories\">Desserts</div>
-            </div>
+            </nav>
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -132,7 +136,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     }
 
-    // line 26
+    // line 30
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -142,7 +146,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 27
+        // line 31
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -159,7 +163,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     public function getDebugInfo()
     {
-        return array (  146 => 27,  136 => 26,  117 => 15,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 28,  65 => 26,  61 => 24,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
+        return array (  150 => 31,  140 => 30,  120 => 18,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 32,  65 => 30,  61 => 28,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -176,16 +180,20 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
     <header>
         {% block header %}
             <div class=\"header\">
-                <h1>FastSushi</h1>
+                <div class=\"headerwrap\">
+                    <h1>FastSushi</h1>
+
+                </div>
                 <div class=\"logo\">
                     <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='35' heigth=\"35\">
                 </div>
             </div>
-            <div class=\"menu\">
+
+            <nav class=\"menu\">
                 <div class=\"categories\">Entrées</div>
                 <div class=\"categories\">Plats</div>
                 <div class=\"categories\">Desserts</div>
-            </div>
+            </nav>
         {% endblock %}
     </header>
     <body>

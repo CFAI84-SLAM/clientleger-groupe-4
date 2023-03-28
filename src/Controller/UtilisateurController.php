@@ -34,14 +34,14 @@ class UtilisateurController extends AbstractController
     /**
      * @Route("/new", name="app_utilisateur_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $encoder): Response
     {
         $utilisateur = new Utilisateur();
         $form = $this->createForm(UtilisateurType::class, $utilisateur);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //$utilisateur->setPassword($passwordEncoder->encodePassword($utilisateur, $utilisateur->getPassword()));
+            $utilisateur->setPassword($encoder->encodePassword($utilisateur, $utilisateur->getPassword()));
             $entityManager->persist($utilisateur);
             $entityManager->flush();
 

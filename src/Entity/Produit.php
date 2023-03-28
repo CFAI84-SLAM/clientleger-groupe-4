@@ -65,7 +65,7 @@ class Produit
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Commandes", inversedBy="idProduit")
-     * @ORM\JoinTable(name="ligne_commande",
+     * @ORM\JoinTable(name="Ligne_Commande",
      *   joinColumns={
      *     @ORM\JoinColumn(name="Id_Produit", referencedColumnName="Id_Produit")
      *   },
