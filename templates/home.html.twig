@@ -1,0 +1,27 @@
+{# templates/home.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <div class="featuredProducts">
+            <h2>Produits phares</h2>
+            <div class="productsDisp">
+                {% for product in products %}
+                    <div class="productWrap col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ product.photo }}" alt="{{ product.nom }}" class="card-img-top" width="200px">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.nom }}</h5>
+                                <p class="card-text">Lorem ipsum</p>
+                                <div class="d-flex justify-content-between align-item-center">
+                                    <a href="#" class="btn btn-dark">View details</a>
+                                    <span class="h5 mt-auto">{{ product.prixht }} €</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}

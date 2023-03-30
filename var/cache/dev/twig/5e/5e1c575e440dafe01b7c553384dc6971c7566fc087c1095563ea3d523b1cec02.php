@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* test.html.twig */
+/* home.html.twig */
 class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad4925e extends Template
 {
     private $source;
@@ -39,12 +39,12 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "test.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "test.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "test.html.twig", 3);
+        $this->parent = $this->loadTemplate("base.html.twig", "home.html.twig", 3);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -83,7 +83,7 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
     public function getTemplateName()
     {
-        return "test.html.twig";
+        return "home.html.twig";
     }
 
     public function isTraitable()
@@ -98,7 +98,7 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
 
     public function getSourceContext()
     {
-        return new Source("{# templates/test.html.twig #}
+        return new Source("{# templates/home.html.twig #}
 
 {% extends 'base.html.twig' %}
 
@@ -111,6 +111,6 @@ class __TwigTemplate_a1b7b4651ba46f9852ce2bc05075ea4fb51415a8bc91ea5c489f0641bad
             </div>
         </div>
     {% endblock %}
-", "test.html.twig", "/var/www/ClientLegerSymf/templates/test.html.twig");
+", "home.html.twig", "/var/www/ClientLegerSymf/templates/home.html.twig");
     }
 }
