@@ -139,6 +139,6 @@ class __TwigTemplate_ad2ed4b130f8043e253b7849f91ac8d3f25fc620729881035c38c95cf66
 
 </body>
 </html>
-", "@ApiPlatform/Graphiql/index.html.twig", "/var/www/ClientLegerSymf/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/Graphiql/index.html.twig");
+", "@ApiPlatform/Graphiql/index.html.twig", "/var/www/clientleger-groupe-4/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/Graphiql/index.html.twig");
     }
 }

@@ -846,6 +846,6 @@ $context["answer"] === false)) {
         </div>
     {% endif %}
 {% endblock %}
-", "@ApiPlatform/DataCollector/request_legacy.html.twig", "/var/www/ClientLegerSymf/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/DataCollector/request_legacy.html.twig");
+", "@ApiPlatform/DataCollector/request_legacy.html.twig", "/var/www/clientleger-groupe-4/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/DataCollector/request_legacy.html.twig");
     }
 }

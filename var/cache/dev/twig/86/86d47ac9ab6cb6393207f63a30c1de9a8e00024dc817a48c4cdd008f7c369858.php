@@ -1671,6 +1671,6 @@ class __TwigTemplate_8eed53e222bdb14ac855c8eda67d150bc58027443b37a39051d9e353378
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/var/www/ClientLegerSymf/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/var/www/clientleger-groupe-4/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

@@ -254,6 +254,6 @@ class __TwigTemplate_564486d7dfa997555e36facf381dff8692dad6addad8f127063f95b001e
 
     <a href=\"{{ path('app_utilisateur_new') }}\">Create new</a>
 {% endblock %}
-", "utilisateur/index.html.twig", "/var/www/ClientLegerSymf/templates/utilisateur/index.html.twig");
+", "utilisateur/index.html.twig", "/var/www/clientleger-groupe-4/templates/utilisateur/index.html.twig");
     }
 }

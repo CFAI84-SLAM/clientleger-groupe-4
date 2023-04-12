@@ -471,6 +471,6 @@ class __TwigTemplate_db3333c370b4578b0190920b3fadae3fd458e85e3331d4e37057ee084e1
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/var/www/ClientLegerSymf/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/var/www/clientleger-groupe-4/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

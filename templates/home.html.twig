@@ -15,7 +15,7 @@
                                 <h5 class="card-title">{{ product.nom }}</h5>
                                 <p class="card-text">Lorem ipsum</p>
                                 <div class="d-flex justify-content-between align-item-center">
-                                    <a href="#" class="btn btn-dark">View details</a>
+                                    <a href="{{ path('produit.detail', {id: product.idProduit}) }}" class="btn btn-dark">Voir plus</a>
                                     <span class="h5 mt-auto">{{ product.prixht }} €</span>
                                 </div>
                             </div>

@@ -403,6 +403,6 @@ class __TwigTemplate_e6cfc257ac3962e3422f642efef2052f9d80ca90ae9881c4899ce1dae1e
 
 </body>
 </html>
-", "@ApiPlatform/SwaggerUi/index.html.twig", "/var/www/ClientLegerSymf/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
+", "@ApiPlatform/SwaggerUi/index.html.twig", "/var/www/clientleger-groupe-4/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
     }
 }

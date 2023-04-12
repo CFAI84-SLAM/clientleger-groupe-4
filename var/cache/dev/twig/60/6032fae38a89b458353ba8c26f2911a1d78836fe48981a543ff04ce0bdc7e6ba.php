@@ -90,7 +90,10 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
             echo "</h5>
                                 <p class=\"card-text\">Lorem ipsum</p>
                                 <div class=\"d-flex justify-content-between align-item-center\">
-                                    <a href=\"#\" class=\"btn btn-dark\">View details</a>
+                                    <a href=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit.detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "idProduit", [], "any", false, false, false, 18)]), "html", null, true);
+            echo "\" class=\"btn btn-dark\">Voir plus</a>
                                     <span class=\"h5 mt-auto\">";
             // line 19
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prixht", [], "any", false, false, false, 19), "html", null, true);
@@ -128,7 +131,7 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
 
     public function getDebugInfo()
     {
-        return array (  108 => 25,  96 => 19,  89 => 15,  82 => 13,  78 => 11,  74 => 10,  68 => 6,  58 => 5,  35 => 3,);
+        return array (  111 => 25,  99 => 19,  95 => 18,  89 => 15,  82 => 13,  78 => 11,  74 => 10,  68 => 6,  58 => 5,  35 => 3,);
     }
 
     public function getSourceContext()
@@ -150,7 +153,7 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
                                 <h5 class=\"card-title\">{{ product.nom }}</h5>
                                 <p class=\"card-text\">Lorem ipsum</p>
                                 <div class=\"d-flex justify-content-between align-item-center\">
-                                    <a href=\"#\" class=\"btn btn-dark\">View details</a>
+                                    <a href=\"{{ path('produit.detail', {id: product.idProduit}) }}\" class=\"btn btn-dark\">Voir plus</a>
                                     <span class=\"h5 mt-auto\">{{ product.prixht }} €</span>
                                 </div>
                             </div>
@@ -160,6 +163,6 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
             </div>
         </div>
     {% endblock %}
-", "home.html.twig", "/var/www/ClientLegerSymf/templates/home.html.twig");
+", "home.html.twig", "/var/www/clientleger-groupe-4/templates/home.html.twig");
     }
 }

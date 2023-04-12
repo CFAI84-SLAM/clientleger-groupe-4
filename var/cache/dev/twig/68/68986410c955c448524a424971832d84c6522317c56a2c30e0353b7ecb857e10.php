@@ -1140,6 +1140,6 @@ class __TwigTemplate_71b8340b6b4a719f546fe889263ef81046b3a92c56e356baa25b581a88d
 
 </body>
 </html>
-", "@ApiPlatform/GraphQlPlayground/index.html.twig", "/var/www/ClientLegerSymf/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/GraphQlPlayground/index.html.twig");
+", "@ApiPlatform/GraphQlPlayground/index.html.twig", "/var/www/clientleger-groupe-4/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/GraphQlPlayground/index.html.twig");
     }
 }
