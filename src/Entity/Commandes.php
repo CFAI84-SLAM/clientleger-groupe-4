@@ -28,7 +28,17 @@ class Commandes
      *
      * @ORM\Column(name="etat", type="string", length=50, nullable=true)
      */
-    private $etat;
+    private $etat = self::STATUS_CART;
+
+
+    /**
+     * An order that is in progress, not placed yet.
+     *
+     * @var string
+     */
+
+    const STATUS_CART = 'cart';
+
 
     /**
      * @var \DateTime|null
@@ -151,5 +161,6 @@ class Commandes
 
         return $this;
     }
+
 
 }
