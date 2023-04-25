@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ product.name }}{% endblock %}
+{% block title %}{{ product.nom }}{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -8,19 +8,26 @@
             <div class="col-md-4">
                 <img src="https://via.placeholder.com/600x400" alt="{{ product.nom }}" class="img-fluid">
             </div>
-            <div class="col-md-8">
-                <h1 class="mt-4 mt-md-0">{{ product.nom }}</h1>
-                <h2>{{ product.prixht }} €</h2>
-                <hr>
-                <b>Description: </b>Lorem ipsum dolor sit amet.
-                <form class="mt-4 p-4 bg-light" method="post">
-                    <div class="form-group">
-                        <label for="quantity">Quantité</label>
-                        <input type="number" class="form-control" id="quantity">
-                    </div>
-                    <button class="btn btn-warning">Ajouter au panier</button>
-                </form>
+
+
+    <div class="col-md-8">
+        <h1 class="mt-4 mt-md-0">{{ product.nom }}</h1>
+        <h2>{{ product.prixht }} €</h2>
+        <hr>
+        <b>Description: </b>
+        {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light'}}) }}
+        <div class="form-group">
+            {{ form_label(form.quantite) }}
+            {{ form_widget(form.quantite, {
+                'attr': {
+                    'class': 'form-control ' ~ (form.quantite.vars.valid ? '' : 'is-invalid')
+                }
+            }) }}
+            <div class="invalid-feedback">
+                {{ form_errors(form.quantite) }}
             </div>
         </div>
+        {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
+        {{ form_end(form) }}
     </div>
 {% endblock %}

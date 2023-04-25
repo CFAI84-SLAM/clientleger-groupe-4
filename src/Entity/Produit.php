@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Produit
  *
  * @ORM\Table(name="Produit", indexes={@ORM\Index(name="Id_Catégorie", columns={"Id_Catégorie"})})
- * @ORM\Entity(repositoryClass=ProduitRepository::class)
+ * @ORM\Entity
  */
 class Produit
 {

@@ -52,7 +52,7 @@ class CartSessionStorage {
     public function getCart(): ?Commandes
     {
         return $this->cartRepository->findOneBy([
-            'id' => $this->getCartId(),
+            //'id' => $this->getCartId(),
             'etat' => Commandes::STATUS_CART
         ]);
     }

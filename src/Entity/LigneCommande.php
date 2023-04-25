@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\LigneCommandeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ *
+ * @ORM\Table(name="Ligne_Commande", indexes={@ORM\Index(name="Id_Produit", columns={"Id_Produit"}), @ORM\Index(name="Id_Commandes", columns={"Id_Commandes"})})
  * @ORM\Entity(repositoryClass=LigneCommandeRepository::class)
  */
 class LigneCommande
@@ -15,6 +18,9 @@ class LigneCommande
     /**
      * @ORM\ManyToOne(targetEntity=Produit::class)
      * @ORM\JoinColumn(nullable=false)
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idProduit;
 
@@ -26,6 +32,8 @@ class LigneCommande
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(1)
      */
     private $quantite;
 
