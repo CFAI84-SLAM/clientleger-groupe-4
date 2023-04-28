@@ -62,28 +62,28 @@ return [[
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%23addLink' => 1,
 'Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 0,
 '[C]Symfony%5CBundle%5CFrameworkBundle%5CController%5CAbstractController%24container' => 1,
-'App%5CController%5CHomeController' => 0,
-'[C]App%5CController%5CHomeController' => 1,
-'App%5CController%5CHomeController%23index' => 2,
-'[C]App%5CController%5CHomeController%23index' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
-'App%5CController%5CSecurityController%23login' => 3,
+'App%5CController%5CSecurityController%23login' => 2,
 '[C]App%5CController%5CSecurityController%23login' => 1,
-'App%5CController%5CSecurityController%23logout' => 4,
+'App%5CController%5CSecurityController%23logout' => 3,
 '[C]App%5CController%5CSecurityController%23logout' => 1,
-'App%5CController%5CUtilisateurController' => 5,
+'App%5CController%5CUtilisateurController' => 4,
 '[C]App%5CController%5CUtilisateurController' => 1,
-'App%5CController%5CUtilisateurController%23index' => 6,
+'App%5CController%5CUtilisateurController%23index' => 5,
 '[C]App%5CController%5CUtilisateurController%23index' => 1,
-'App%5CController%5CUtilisateurController%23new' => 7,
+'App%5CController%5CUtilisateurController%23new' => 6,
 '[C]App%5CController%5CUtilisateurController%23new' => 1,
-'App%5CController%5CUtilisateurController%23show' => 8,
+'App%5CController%5CUtilisateurController%23show' => 7,
 '[C]App%5CController%5CUtilisateurController%23show' => 1,
-'App%5CController%5CUtilisateurController%23edit' => 9,
+'App%5CController%5CUtilisateurController%23edit' => 8,
 '[C]App%5CController%5CUtilisateurController%23edit' => 1,
-'App%5CController%5CUtilisateurController%23delete' => 10,
+'App%5CController%5CUtilisateurController%23delete' => 9,
 '[C]App%5CController%5CUtilisateurController%23delete' => 1,
+'App%5CController%5CtestController' => 0,
+'[C]App%5CController%5CtestController' => 1,
+'App%5CController%5CtestController%23test' => 10,
+'[C]App%5CController%5CtestController%23test' => 1,
 'App%5CEntity%5CCat%C3%A9gorie' => 11,
 '[C]App%5CEntity%5CCat%C3%A9gorie' => 1,
 'App%5CEntity%5CCat%C3%A9gorie%23getIdCat%C3%A9gorie' => 0,
@@ -792,30 +792,8 @@ return [[
 ], [
 
 0 => [],
-1 => 1681284460,
+1 => 1680004585,
 2 => static function () {
-    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
-        $o = [
-            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
-        ],
-        null,
-        [
-            'Symfony\\Component\\Routing\\Annotation\\Route' => [
-                'path' => [
-                    '/',
-                ],
-                'name' => [
-                    'accueil',
-                ],
-            ],
-        ],
-        [
-            $o[0],
-        ],
-        []
-    );
-},
-3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -837,7 +815,7 @@ return [[
         []
     );
 },
-4 => static function () {
+3 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -859,7 +837,7 @@ return [[
         []
     );
 },
-5 => static function () {
+4 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -878,7 +856,7 @@ return [[
         []
     );
 },
-6 => static function () {
+5 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -905,7 +883,7 @@ return [[
         []
     );
 },
-7 => static function () {
+6 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -933,7 +911,7 @@ return [[
         []
     );
 },
-8 => static function () {
+7 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -960,7 +938,7 @@ return [[
         []
     );
 },
-9 => static function () {
+8 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -988,7 +966,7 @@ return [[
         []
     );
 },
-10 => static function () {
+9 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
@@ -1006,6 +984,28 @@ return [[
                     [
                         'POST',
                     ],
+                ],
+            ],
+        ],
+        [
+            $o[0],
+        ],
+        []
+    );
+},
+10 => static function () {
+    return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+        $o = [
+            clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        ],
+        null,
+        [
+            'Symfony\\Component\\Routing\\Annotation\\Route' => [
+                'path' => [
+                    '/',
+                ],
+                'name' => [
+                    'accueil',
                 ],
             ],
         ],
@@ -1047,7 +1047,7 @@ return [[
         [
             'stdClass' => [
                 'name' => [
-                    'Id_Catégorie',
+                    'Id_Categorie',
                 ],
                 'type' => [
                     'integer',
@@ -1344,7 +1344,7 @@ return [[
             'stdClass' => [
                 'name' => [
                     'Produit',
-                    'Id_Catégorie',
+                    'Id_Categorie',
                 ],
                 'indexes' => [
                     [
@@ -1353,7 +1353,7 @@ return [[
                 ],
                 'columns' => [
                     1 => [
-                        'Id_Catégorie',
+                        'Id_Categorie',
                     ],
                 ],
             ],
@@ -1549,10 +1549,10 @@ return [[
                     ],
                 ],
                 'name' => [
-                    2 => 'Id_Catégorie',
+                    2 => 'Id_Categorie',
                 ],
                 'referencedColumnName' => [
-                    2 => 'Id_Catégorie',
+                    2 => 'Id_Categorie',
                 ],
             ],
         ],

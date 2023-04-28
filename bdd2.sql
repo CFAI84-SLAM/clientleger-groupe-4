@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS `Catégorie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Catégorie` (
-  `Id_Catégorie` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Categorie` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`Id_Catégorie`)
+  PRIMARY KEY (`Id_Categorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -111,10 +111,10 @@ CREATE TABLE `Produit` (
   `prixHT` decimal(15,3) DEFAULT NULL,
   `tva` decimal(15,2) DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `Id_Catégorie` int(11) NOT NULL,
+  `Id_Categorie` int(11) NOT NULL,
   PRIMARY KEY (`Id_Produit`),
-  KEY `Id_Catégorie` (`Id_Catégorie`),
-  CONSTRAINT `Produit_ibfk_1` FOREIGN KEY (`Id_Catégorie`) REFERENCES `Catégorie` (`Id_Catégorie`)
+  KEY `Id_Categorie` (`Id_Categorie`),
+  CONSTRAINT `Produit_ibfk_1` FOREIGN KEY (`Id_Categorie`) REFERENCES `Catégorie` (`Id_Categorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

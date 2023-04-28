@@ -19,7 +19,7 @@ class CartType extends AbstractType
             ->add('idUtilisateur')
             ->add('idUtilisateur1')
             ->add('idProduit')*/
-            ->add('items', CollectionType::class, [
+            ->add('idProduit', CollectionType::class, [
                 'entry_type' => CartItemType::class
             ])
             ->add('save', SubmitType::class)

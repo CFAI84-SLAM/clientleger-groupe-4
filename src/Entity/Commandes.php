@@ -31,6 +31,12 @@ class Commandes
     private $etat = self::STATUS_CART;
 
 
+
+    /**
+     * @ORM\OneToMany(targetEntity=CommandeItem::class, mappedBy="orderRef", cascade={"persist", "remove"}, orphanRemoval=true)
+     */
+    private $items;
+
     /**
      * An order that is in progress, not placed yet.
      *
@@ -73,6 +79,8 @@ class Commandes
      * @ORM\ManyToMany(targetEntity="Produit", mappedBy="idCommandes")
      */
     private $idProduit = array();
+
+
 
     /**
      * Constructor
@@ -143,23 +151,43 @@ class Commandes
         return $this->idProduit;
     }
 
-    public function addIdProduit(Produit $idProduit): self
+
+    public function addItem(CommandeItem $produit): self
     {
-        if (!$this->idProduit->contains($idProduit)) {
-            $this->idProduit[] = $idProduit;
-            $idProduit->addIdCommande($this);
+        if (!$this->items->contains($produit)) {
+            $this->items[] = $produit;
+            $produit->setOrderRef($this);
         }
 
         return $this;
     }
 
-    public function removeIdProduit(Produit $idProduit): self
+    public function removeItem(CommandeItem $produit): self
     {
-        if ($this->idProduit->removeElement($idProduit)) {
-            $idProduit->removeIdCommande($this);
+        if ($this->items->removeElement($produit)) {
+            // set the owning side to null (unless already changed)
+            if ($produit->getOrderRef() === $this) {
+                $produit->setOrderRef(null);
+            }
         }
 
         return $this;
+    }
+
+    /**
+     * Calculates the order total.
+     *
+     * @return float
+     */
+    public function getTotal(): float
+    {
+        $total = 0;
+
+        foreach ($this->getIdProduit() as $produit) {
+            $total += $produit->getTotal();
+        }
+
+        return $total;
     }
 
 

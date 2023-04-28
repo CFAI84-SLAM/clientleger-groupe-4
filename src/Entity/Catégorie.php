@@ -15,11 +15,11 @@ class Catégorie
     /**
      * @var int
      *
-     * @ORM\Column(name="Id_Catégorie", type="integer", nullable=false)
+     * @ORM\Column(name="Id_Categorie", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idCatégorie;
+    private $idCategorie;
 
     /**
      * @var string|null
@@ -28,9 +28,9 @@ class Catégorie
      */
     private $type;
 
-    public function getIdCatégorie(): ?int
+    public function getidCategorie(): ?int
     {
-        return $this->idCatégorie;
+        return $this->idCategorie;
     }
 
     public function getType(): ?string

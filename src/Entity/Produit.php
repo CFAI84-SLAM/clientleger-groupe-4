@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Produit
  *
- * @ORM\Table(name="Produit", indexes={@ORM\Index(name="Id_Catégorie", columns={"Id_Catégorie"})})
+ * @ORM\Table(name="Produit", indexes={@ORM\Index(name="Id_Categorie", columns={"Id_Categorie"})})
  * @ORM\Entity
  */
 class Produit
@@ -56,10 +56,10 @@ class Produit
      *
      * @ORM\ManyToOne(targetEntity="Catégorie")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Id_Catégorie", referencedColumnName="Id_Catégorie")
+     *   @ORM\JoinColumn(name="Id_Categorie", referencedColumnName="Id_Categorie")
      * })
      */
-    private $idCatégorie;
+    private $idCategorie;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -137,14 +137,14 @@ class Produit
         return $this;
     }
 
-    public function getIdCatégorie(): ?Catégorie
+    public function getidCategorie(): ?Catégorie
     {
-        return $this->idCatégorie;
+        return $this->idCategorie;
     }
 
-    public function setIdCatégorie(?Catégorie $idCatégorie): self
+    public function setidCategorie(?Catégorie $idCategorie): self
     {
-        $this->idCatégorie = $idCatégorie;
+        $this->idCategorie = $idCategorie;
 
         return $this;
     }

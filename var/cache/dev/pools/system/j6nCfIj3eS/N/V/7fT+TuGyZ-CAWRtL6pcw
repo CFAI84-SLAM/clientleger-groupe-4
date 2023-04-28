@@ -11,8 +11,11 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'targetEntity' => [
                 'App\\Entity\\Commandes',
             ],
-            'nullable' => [
-                1 => false,
+            'name' => [
+                1 => 'Id_Commandes',
+            ],
+            'referencedColumnName' => [
+                1 => 'Id_Commandes',
             ],
         ],
     ],

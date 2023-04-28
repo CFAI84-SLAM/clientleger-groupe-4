@@ -16,7 +16,7 @@ class ProductFixtures extends Fixture
             $produit->setPrixht(mt_rand(10, 600));
             $produit->setTva(20);
             $produit->setPhoto('images/sushitest.jpeg');
-            $produit->setIdCatégorie($this->getReference(('test')));
+            $produit->setidCategorie($this->getReference(('test')));
 
 
             $manager->persist($produit);

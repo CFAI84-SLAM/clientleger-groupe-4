@@ -29,11 +29,11 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $item = $form->getData();
-            $item->setProduct($product);
+            $item->setProduit($product);
 
             $cart = $cartManager->getCurrentCart();
             $cart
-                ->addItem($item);
+                ->addIdProduit($item);
 
             $cartManager->save($cart);
 

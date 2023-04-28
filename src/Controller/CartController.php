@@ -23,7 +23,7 @@ class CartController extends AbstractController
         $cart = $cartManager->getCurrentCart();
         $form = $this->createForm(CartType::class, $cart);
 
-        return $this->render('panier/index.html.twig', [
+        return $this->render('cart/index.html.twig', [
             'cart' => $cart,
             'form' => $form->createView()
         ]);
