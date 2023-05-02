@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Catégorie`
+-- Table structure for table `Categorie`
 --
 
-DROP TABLE IF EXISTS `Catégorie`;
+DROP TABLE IF EXISTS `Categorie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Catégorie` (
+CREATE TABLE `Categorie` (
   `Id_Categorie` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id_Categorie`)
@@ -30,13 +30,13 @@ CREATE TABLE `Catégorie` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Catégorie`
+-- Dumping data for table `Categorie`
 --
 
-LOCK TABLES `Catégorie` WRITE;
-/*!40000 ALTER TABLE `Catégorie` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Catégorie` ENABLE KEYS */;
-UNLOCK TABLES;
+/*LOCK TABLES `Categorie` WRITE;*/
+/*!40000 ALTER TABLE `Categorie` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Categorie` ENABLE KEYS */;
+/*UNLOCK TABLES;*/
 
 --
 -- Table structure for table `Commandes`
@@ -114,7 +114,7 @@ CREATE TABLE `Produit` (
   `Id_Categorie` int(11) NOT NULL,
   PRIMARY KEY (`Id_Produit`),
   KEY `Id_Categorie` (`Id_Categorie`),
-  CONSTRAINT `Produit_ibfk_1` FOREIGN KEY (`Id_Categorie`) REFERENCES `Catégorie` (`Id_Categorie`)
+  CONSTRAINT `Produit_ibfk_1` FOREIGN KEY (`Id_Categorie`) REFERENCES `Categorie` (`Id_Categorie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

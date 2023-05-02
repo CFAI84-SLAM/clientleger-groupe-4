@@ -203,3 +203,7 @@ c46529,192.168.5.75,POST,http://clientlegersymf.com/produit/2,1682673829,,500
 474846,192.168.5.75,POST,http://clientlegersymf.com/produit/2,1682673906,,500
 44b19a,192.168.5.75,GET,http://clientlegersymf.com/produit/2,1682675091,048a60,500
 048a60,192.168.5.75,POST,http://clientlegersymf.com/produit/2,1682675091,,500
+e0cf2f,192.168.1.25,GET,http://clientleger.com/public/produit/1,1683028802,965a60,500
+965a60,192.168.1.25,GET,http://clientleger.com/public/produit/1,1683028802,,500
+c61336,192.168.1.25,GET,http://clientleger.com/public/produit/1,1683031521,2f38f8,404
+2f38f8,192.168.1.25,GET,http://clientleger.com/public/produit/1,1683031521,,404
