@@ -29,14 +29,14 @@ class getDoctrine_FixturesLoadCommandService extends App_KernelDevDebugContainer
         include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-fixtures-bundle/ORMFixtureInterface.php';
         include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-fixtures-bundle/Fixture.php';
         include_once \dirname(__DIR__, 4).'/src/DataFixtures/AppFixtures.php';
-        include_once \dirname(__DIR__, 4).'/src/DataFixtures/CatégorieFixtures.php';
+        include_once \dirname(__DIR__, 4).'/src/DataFixtures/CategorieFixtures.php';
         include_once \dirname(__DIR__, 4).'/src/DataFixtures/ProductFixtures.php';
         include_once \dirname(__DIR__, 4).'/src/DataFixtures/UserFixture.php';
         include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-fixtures-bundle/Purger/PurgerFactory.php';
         include_once \dirname(__DIR__, 4).'/vendor/doctrine/doctrine-fixtures-bundle/Purger/ORMPurgerFactory.php';
 
         $a = new \Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader($container);
-        $a->addFixtures([0 => ['fixture' => new \App\DataFixtures\AppFixtures(), 'groups' => []], 1 => ['fixture' => new \App\DataFixtures\CatégorieFixtures(), 'groups' => []], 2 => ['fixture' => new \App\DataFixtures\ProductFixtures(), 'groups' => []], 3 => ['fixture' => new \App\DataFixtures\UserFixture(), 'groups' => []]]);
+        $a->addFixtures([0 => ['fixture' => new \App\DataFixtures\AppFixtures(), 'groups' => []], 1 => ['fixture' => new \App\DataFixtures\CategorieFixtures(), 'groups' => []], 2 => ['fixture' => new \App\DataFixtures\ProductFixtures(), 'groups' => []], 3 => ['fixture' => new \App\DataFixtures\UserFixture(), 'groups' => []]]);
 
         $container->privates['doctrine.fixtures_load_command'] = $instance = new \Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand($a, ($container->services['doctrine'] ?? $container->getDoctrineService()), ['default' => new \Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory()]);
 

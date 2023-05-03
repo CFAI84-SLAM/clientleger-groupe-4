@@ -234,7 +234,7 @@ DROP TABLE IF EXISTS `Produit`;
 CREATE TABLE `Produit` (
   `Id_Produit` int(11) NOT NULL,
   `nom` varchar(50) DEFAULT NULL,
-  `Catégorie` int(11) DEFAULT NULL,
+  `Categorie` int(11) DEFAULT NULL,
   `custom` int(11) DEFAULT NULL,
   `prix_HT` varchar(50) DEFAULT NULL,
   `ventes` int(11) DEFAULT NULL,

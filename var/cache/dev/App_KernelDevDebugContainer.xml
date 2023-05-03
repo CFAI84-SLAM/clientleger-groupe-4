@@ -539,7 +539,7 @@
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
-    <service id="App\DataFixtures\CatégorieFixtures" class="App\DataFixtures\CatégorieFixtures" autowire="true" autoconfigure="true">
+    <service id="App\DataFixtures\CategorieFixtures" class="App\DataFixtures\CategorieFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\DataFixtures\ProductFixtures" class="App\DataFixtures\ProductFixtures" autowire="true" autoconfigure="true">
@@ -7725,7 +7725,7 @@
             <argument key="groups" type="collection"/>
           </argument>
           <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\CatégorieFixtures"/>
+            <argument key="fixture" type="service" id="App\DataFixtures\CategorieFixtures"/>
             <argument key="groups" type="collection"/>
           </argument>
           <argument type="collection">
@@ -7759,8 +7759,8 @@
     <service id=".abstract.instanceof.App\Controller\UtilisateurController" class="App\Controller\UtilisateurController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\CatégorieFixtures" class="App\DataFixtures\CatégorieFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\CatégorieFixtures" class="App\DataFixtures\CatégorieFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\CategorieFixtures" class="App\DataFixtures\CategorieFixtures" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataFixtures\CategorieFixtures" class="App\DataFixtures\CategorieFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\ProductFixtures" class="App\DataFixtures\ProductFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\ProductFixtures" class="App\DataFixtures\ProductFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixture" class="App\DataFixtures\UserFixture" autowire="true" abstract="true"/>

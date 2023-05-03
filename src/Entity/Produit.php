@@ -52,9 +52,9 @@ class Produit
     private $photo;
 
     /**
-     * @var \Catégorie
+     * @var \Categorie
      *
-     * @ORM\ManyToOne(targetEntity="Catégorie")
+     * @ORM\ManyToOne(targetEntity="Categorie")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="Id_Categorie", referencedColumnName="Id_Categorie")
      * })
@@ -137,12 +137,12 @@ class Produit
         return $this;
     }
 
-    public function getidCategorie(): ?Catégorie
+    public function getidCategorie(): ?Categorie
     {
         return $this->idCategorie;
     }
 
-    public function setidCategorie(?Catégorie $idCategorie): self
+    public function setidCategorie(?Categorie $idCategorie): self
     {
         $this->idCategorie = $idCategorie;
 

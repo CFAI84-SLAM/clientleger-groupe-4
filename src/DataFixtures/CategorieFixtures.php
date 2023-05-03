@@ -1,0 +1,23 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Entity\Categorie;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Persistence\ObjectManager;
+
+class CategorieFixtures extends Fixture
+{
+    public function load(ObjectManager $manager): void
+    {
+        $Categorie = new Categorie();
+        $Categorie->setType('test');
+        $this->addReference('test', $Categorie);
+
+        $manager->persist($Categorie);
+
+        $manager->flush();
+
+
+    }
+}

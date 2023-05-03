@@ -1025,7 +1025,7 @@ return [[
         [
             'stdClass' => [
                 'name' => [
-                    'Catégorie',
+                    'Categorie',
                 ],
             ],
         ],
@@ -1541,7 +1541,7 @@ return [[
         [
             'stdClass' => [
                 'targetEntity' => [
-                    'Catégorie',
+                    'Categorie',
                 ],
                 'value' => [
                     1 => [
