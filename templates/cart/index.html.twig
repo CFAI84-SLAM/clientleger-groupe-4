@@ -7,7 +7,7 @@
         <h1>Votre panier</h1>
         {% if cart.idProduit.count > 0 %}
             <div class="row mt-4">
-                <!-- List of idProduit -->
+                <!-- List of items -->
                 <div class="col-md-8"></div>
                 <!-- Summary -->
                 <div class="col-md-4"></div>
@@ -30,30 +30,30 @@
                 </div>
             </div>
             <ul class="list-group list-group-flush">
-                {% for produit in form.idProduit %}
+                {% for item in form.items %}
                     <li class="list-group-produit d-flex">
                         <div class="flex-fill mr-2">
                             <img src="https://via.placeholder.com/200x150" width="64" alt="Product image">
                         </div>
                         <div class="flex-fill mr-2">
-                            <h5 class="mt-0 mb-0">{{ produit.vars.data.product.nom }}</h5>
-                            <small>{{ produit.vars.data.product.description[:50] }}...</small>
+                            <h5 class="mt-0 mb-0">{{ item.vars.data.produit.nom }}</h5>
+                            <small>desc test</small>
                             <div class="form-inline mt-2">
                                 <div class="form-group mb-0 mr-2">
-                                    {{ form_widget(produit.quantite, {
+                                    {{ form_widget(item.quantite, {
                                         'attr': {
-                                            'class': 'form-control form-control-sm ' ~ (produit.quantite.vars.valid ? '' : 'is-invalid')
+                                            'class': 'form-control form-control-sm ' ~ (item.quantite.vars.valid ? '' : 'is-invalid')
                                         }
                                     }) }}
                                     <div class="invalid-feedback">
-                                        {{ form_errors(produit.quantite) }}
+                                        {{ form_errors(item.quantite) }}
                                     </div>
                                 </div>
-                                {{ form_widget(produit.remove, {'attr': {'class': 'btn btn-dark btn-sm'}}) }}
+                                {{ form_widget(item.remove, {'attr': {'class': 'btn btn-dark btn-sm'}}) }}
                             </div>
                         </div>
                         <div class="flex-fill mr-2 text-right">
-                            <b>{{ produit.vars.data.product.price }} €</b>
+                            <b>{{ item.vars.data.produit.prixHT }} €</b>
                         </div>
                     </li>
                 {% endfor %}

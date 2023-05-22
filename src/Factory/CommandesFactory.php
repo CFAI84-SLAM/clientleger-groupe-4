@@ -33,12 +33,12 @@ class CommandesFactory
      *
      * @param Produit $product
      *
-     * @return LigneCommande
+     * @return CommandeItem
      */
-    public function createItem(Produit $product): LigneCommande
+    public function createItem(Produit $product): CommandeItem
     {
-        $item = new LigneCommande();
-        $item->setIdProduit($product);
+        $item = new CommandeItem();
+        $item->setId($product);
         $item->setQuantite(1);
 
         return $item;

@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\LigneCommande;
+use App\Entity\CommandeItem;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,7 +21,7 @@ class CartItemType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-        'data_class' => LigneCommande::class
+        'data_class' => CommandeItem::class
         ]);
     }
 }

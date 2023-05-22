@@ -35,6 +35,7 @@ class CommandeItem
     private $orderRef;
 
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -78,6 +79,25 @@ class CommandeItem
         return $this;
     }
 
+    /**
+     * Tests if the given item given corresponds to the same order item.
+     *
+     * @param CommandeItem $produit
+     *
+     * @return bool
+     */
+    public function equals(CommandeItem $produit): bool
+    {
+        return $this->getProduit()->getIdProduit() === $produit->getProduit()->getIdProduit();
+    }
 
-
+    /**
+     * Calculates the item total.
+     *
+     * @return float|int
+     */
+    public function getTotal(): float
+    {
+        return $this->getProduit()->getPrixht() * $this->getQuantite();
+    }
 }

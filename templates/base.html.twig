@@ -11,12 +11,14 @@
         {% block header %}
             <div class="header">
                 <div class="login">
-                    <a href="/login">Connexion</a>
+                    <a href="{{ path('app_login') }}">Connexion</a>
                 </div>
                 <div class="headerwrap">
                     <h1 class="main-title centered">Fast Sushi</h1>
                     <div class="logo">
-                        <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">
+                        <a href="{{ path('panier') }}">
+                           <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">
+                        </a>
                     </div>
                 </div>
             </div>

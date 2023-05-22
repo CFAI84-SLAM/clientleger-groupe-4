@@ -33,11 +33,11 @@ class ProductController extends AbstractController
 
             $cart = $cartManager->getCurrentCart();
             $cart
-                ->addIdProduit($item);
+                ->addItem($item);
 
             $cartManager->save($cart);
 
-            return $this->redirectToRoute('product.detail', ['id' => $product->getId()]);
+            return $this->redirectToRoute('produit.detail', ['id' => $product->getIdProduit()]);
         }
 
         return $this->render('product/detail.html.twig', [

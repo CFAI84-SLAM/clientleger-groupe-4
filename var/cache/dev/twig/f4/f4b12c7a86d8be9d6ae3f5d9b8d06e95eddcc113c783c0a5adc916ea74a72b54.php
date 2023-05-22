@@ -57,13 +57,13 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         ";
         // line 11
         $this->displayBlock('header', $context, $blocks);
-        // line 30
+        // line 32
         echo "    </header>
     <body>
         ";
-        // line 32
-        $this->displayBlock('body', $context, $blocks);
         // line 34
+        $this->displayBlock('body', $context, $blocks);
+        // line 36
         echo "    </body>
 </html>
 ";
@@ -111,15 +111,23 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         // line 12
         echo "            <div class=\"header\">
                 <div class=\"login\">
-                    <a href=\"/login\">Connexion</a>
+                    <a href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">Connexion</a>
                 </div>
                 <div class=\"headerwrap\">
                     <h1 class=\"main-title centered\">Fast Sushi</h1>
                     <div class=\"logo\">
-                        <img id=\"shoppingCart\" src=";
+                        <a href=\"";
         // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
+        echo "\">
+                           <img id=\"shoppingCart\" src=";
+        // line 20
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shopping-cart.png"), "html", null, true);
         echo " width='35' heigth=\"35\">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -138,7 +146,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     }
 
-    // line 32
+    // line 34
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -148,7 +156,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 33
+        // line 35
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -165,7 +173,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     public function getDebugInfo()
     {
-        return array (  152 => 33,  142 => 32,  121 => 19,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 34,  65 => 32,  61 => 30,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
+        return array (  160 => 35,  150 => 34,  128 => 20,  124 => 19,  116 => 14,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 36,  65 => 34,  61 => 32,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -183,12 +191,14 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         {% block header %}
             <div class=\"header\">
                 <div class=\"login\">
-                    <a href=\"/login\">Connexion</a>
+                    <a href=\"{{ path('app_login') }}\">Connexion</a>
                 </div>
                 <div class=\"headerwrap\">
                     <h1 class=\"main-title centered\">Fast Sushi</h1>
                     <div class=\"logo\">
-                        <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='35' heigth=\"35\">
+                        <a href=\"{{ path('panier') }}\">
+                           <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='35' heigth=\"35\">
+                        </a>
                     </div>
                 </div>
             </div>

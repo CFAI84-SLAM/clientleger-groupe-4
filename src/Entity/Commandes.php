@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CommandesRepository;
 
 /**
  * Commandes
@@ -88,6 +89,7 @@ class Commandes
     public function __construct()
     {
         $this->idProduit = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->items = new ArrayCollection();
     }
 
     public function getIdCommandes(): ?int
@@ -151,24 +153,33 @@ class Commandes
         return $this->idProduit;
     }
 
+    public function getItems(): Collection
+    {
+        return $this->items;
+    }
 
     public function addItem(CommandeItem $produit): self
     {
-        if (!$this->items->contains($produit)) {
-            $this->items[] = $produit;
-            $produit->setOrderRef($this);
+        foreach ($this->getItems() as $existingItem) {
+            // The item already exists, update the quantity
+            if ($existingItem->equals($produit)) {
+                $existingItem->setQuantite(
+                    $existingItem->getQuantite() + $produit->getQuantite()
+                );
+                return $this;
+            }
         }
+
+        $this->items[] = $produit;
+        $produit->setOrderRef($this);
 
         return $this;
     }
 
-    public function removeItem(CommandeItem $produit): self
+    public function removeItem(): self
     {
-        if ($this->items->removeElement($produit)) {
-            // set the owning side to null (unless already changed)
-            if ($produit->getOrderRef() === $this) {
-                $produit->setOrderRef(null);
-            }
+        foreach ($this->getItems() as $item) {
+            $this->removeItem($item);
         }
 
         return $this;
@@ -183,7 +194,7 @@ class Commandes
     {
         $total = 0;
 
-        foreach ($this->getIdProduit() as $produit) {
+        foreach ($this->getItems() as $produit) {
             $total += $produit->getTotal();
         }
 

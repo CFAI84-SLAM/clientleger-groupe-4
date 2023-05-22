@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\LigneCommande;
+use App\Entity\CommandeItem;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,7 +29,7 @@ class AddToCartType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => LigneCommande::class,
+            'data_class' => CommandeItem::class,
         ]);
     }
 }
