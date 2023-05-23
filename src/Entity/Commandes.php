@@ -175,8 +175,18 @@ class Commandes
 
         return $this;
     }
+    public function removeItem(CommandeItem $item): self
+    {
+        if ($this->items->removeElement($item)) {
+            // set the owning side to null (unless already changed)
+            if ($item->getOrderRef() === $this) {
+                $item->setOrderRef(null);
+            }
+        }
 
-    public function removeItem(): self
+        return $this;
+    }
+    public function removeItems(): self
     {
         foreach ($this->getItems() as $item) {
             $this->removeItem($item);

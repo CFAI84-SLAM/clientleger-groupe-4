@@ -21,6 +21,28 @@ class CommandesRepository extends ServiceEntityRepository
         parent::__construct($registry, Commandes::class);
     }
 
+    /**
+     * Finds carts that have not been modified since the given date.
+     *
+     * @param \DateTime $limitDate
+     * @param int $limit
+     *
+     * @return int|mixed|string
+     */
+    public function findCartsNotModifiedSince(\DateTime $limitDate, int $limit = 10): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.etat = :etat')
+            ->andWhere('o.dateDeCommande < :date')
+            ->setParameter('etat', Commandes::STATUS_CART)
+            ->setParameter('date', $limitDate)
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
     public function add(Commandes $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
