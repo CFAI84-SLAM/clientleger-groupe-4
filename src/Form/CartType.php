@@ -18,9 +18,12 @@ class CartType extends AbstractType
         $builder
             /*->add('etat')
             ->add('dateDeCommande')
-            ->add('idUtilisateur')
-            ->add('idUtilisateur1')
+
             ->add('idProduit')*/
+
+            /*->add('idUtilisateur')
+            ->add('idUtilisateur1')*/
+
             ->add('items', CollectionType::class, [
                 'entry_type' => CartItemType::class
             ])

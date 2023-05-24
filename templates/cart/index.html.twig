@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container mt-4">
         <h1>Votre panier</h1>
-        {% if cart.idProduit.count > 0 %}
+        {% if cart.items.count > 0 %}
             <div class="row mt-4">
                 <!-- List of items -->
                 <div class="col-md-8"></div>
@@ -36,7 +36,7 @@
                             <img src="https://via.placeholder.com/200x150" width="64" alt="Product image">
                         </div>
                         <div class="flex-fill mr-2">
-                            <h5 class="mt-0 mb-0">{{ item.vars.data.produit.nom }}</h5>
+                            <h5 class="mt-0 mb-0 card-title">{{ item.vars.data.produit.nom }}</h5>
                             <small>desc test</small>
                             <div class="form-inline mt-2">
                                 <div class="form-group mb-0 mr-2">
@@ -53,12 +53,13 @@
                             </div>
                         </div>
                         <div class="flex-fill mr-2 text-right">
-                            <b>{{ item.vars.data.produit.prixHT }} €</b>
+                            <b class="card-price">{{ item.vars.data.produit.prixHT }} €</b>
                         </div>
                     </li>
                 {% endfor %}
             </ul>
         </div>
+        {{ form_rest(form) }}
         {{ form_end(form, {'render_rest': false}) }}
     </div>
 
@@ -66,7 +67,7 @@
         <div class="card mt-4 mt-md-0">
             <h5 class="card-header bg-dark text-white">Résumé</h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-produit d-flex justify-content-between">
+                <li class="list-group-item d-flex justify-content-between">
                     <div><b>Total</b></div>
                     <span><b>{{ cart.total }} €</b></span>
                 </li>

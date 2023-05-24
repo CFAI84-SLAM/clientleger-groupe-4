@@ -14,7 +14,10 @@
                     <a href="{{ path('app_login') }}">Connexion</a>
                 </div>
                 <div class="headerwrap">
-                    <h1 class="main-title centered">Fast Sushi</h1>
+                    <a style="none;" href="{{ path('accueil') }}">
+                        <h1 class="main-title centered">Fast Sushi</h1>
+                    </a>
+
                     <div class="logo">
                         <a href="{{ path('panier') }}">
                            <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">

@@ -89,7 +89,7 @@ class __TwigTemplate_534ab2f5e717ba3449beaebaa643e7a00ec6632a57182e1e0445391f5c8
         <h1>Votre panier</h1>
         ";
         // line 8
-        if ((1 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 8, $this->source); })()), "idProduit", [], "any", false, false, false, 8), "count", [], "any", false, false, false, 8), 0))) {
+        if ((1 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 8, $this->source); })()), "items", [], "any", false, false, false, 8), "count", [], "any", false, false, false, 8), 0))) {
             // line 9
             echo "            <div class=\"row mt-4\">
                 <!-- List of items -->
@@ -142,7 +142,7 @@ class __TwigTemplate_534ab2f5e717ba3449beaebaa643e7a00ec6632a57182e1e0445391f5c8
                             <img src=\"https://via.placeholder.com/200x150\" width=\"64\" alt=\"Product image\">
                         </div>
                         <div class=\"flex-fill mr-2\">
-                            <h5 class=\"mt-0 mb-0\">";
+                            <h5 class=\"mt-0 mb-0 card-title\">";
             // line 39
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "vars", [], "any", false, false, false, 39), "data", [], "any", false, false, false, 39), "produit", [], "any", false, false, false, 39), "nom", [], "any", false, false, false, 39), "html", null, true);
             echo "</h5>
@@ -169,7 +169,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                             </div>
                         </div>
                         <div class=\"flex-fill mr-2 text-right\">
-                            <b>";
+                            <b class=\"card-price\">";
             // line 56
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["item"], "vars", [], "any", false, false, false, 56), "data", [], "any", false, false, false, 56), "produit", [], "any", false, false, false, 56), "prixHT", [], "any", false, false, false, 56), "html", null, true);
             echo " €</b>
@@ -185,7 +185,11 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
         </div>
         ";
         // line 62
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), 'form_end', ["render_rest" => false]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), 'rest');
+        echo "
+        ";
+        // line 63
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), 'form_end', ["render_rest" => false]);
         echo "
     </div>
 
@@ -193,11 +197,11 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
         <div class=\"card mt-4 mt-md-0\">
             <h5 class=\"card-header bg-dark text-white\">Résumé</h5>
             <ul class=\"list-group list-group-flush\">
-                <li class=\"list-group-produit d-flex justify-content-between\">
+                <li class=\"list-group-item d-flex justify-content-between\">
                     <div><b>Total</b></div>
                     <span><b>";
-        // line 71
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 71, $this->source); })()), "total", [], "any", false, false, false, 71), "html", null, true);
+        // line 72
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 72, $this->source); })()), "total", [], "any", false, false, false, 72), "html", null, true);
         echo " €</b></span>
                 </li>
             </ul>
@@ -227,7 +231,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
 
     public function getDebugInfo()
     {
-        return array (  200 => 71,  188 => 62,  184 => 60,  174 => 56,  167 => 52,  161 => 49,  157 => 47,  155 => 45,  154 => 43,  147 => 39,  140 => 34,  136 => 33,  129 => 29,  125 => 28,  117 => 23,  112 => 20,  106 => 17,  103 => 16,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  204 => 72,  192 => 63,  188 => 62,  184 => 60,  174 => 56,  167 => 52,  161 => 49,  157 => 47,  155 => 45,  154 => 43,  147 => 39,  140 => 34,  136 => 33,  129 => 29,  125 => 28,  117 => 23,  112 => 20,  106 => 17,  103 => 16,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -239,7 +243,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
 {% block body %}
     <div class=\"container mt-4\">
         <h1>Votre panier</h1>
-        {% if cart.idProduit.count > 0 %}
+        {% if cart.items.count > 0 %}
             <div class=\"row mt-4\">
                 <!-- List of items -->
                 <div class=\"col-md-8\"></div>
@@ -270,7 +274,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                             <img src=\"https://via.placeholder.com/200x150\" width=\"64\" alt=\"Product image\">
                         </div>
                         <div class=\"flex-fill mr-2\">
-                            <h5 class=\"mt-0 mb-0\">{{ item.vars.data.produit.nom }}</h5>
+                            <h5 class=\"mt-0 mb-0 card-title\">{{ item.vars.data.produit.nom }}</h5>
                             <small>desc test</small>
                             <div class=\"form-inline mt-2\">
                                 <div class=\"form-group mb-0 mr-2\">
@@ -287,12 +291,13 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                             </div>
                         </div>
                         <div class=\"flex-fill mr-2 text-right\">
-                            <b>{{ item.vars.data.produit.prixHT }} €</b>
+                            <b class=\"card-price\">{{ item.vars.data.produit.prixHT }} €</b>
                         </div>
                     </li>
                 {% endfor %}
             </ul>
         </div>
+        {{ form_rest(form) }}
         {{ form_end(form, {'render_rest': false}) }}
     </div>
 
@@ -300,7 +305,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
         <div class=\"card mt-4 mt-md-0\">
             <h5 class=\"card-header bg-dark text-white\">Résumé</h5>
             <ul class=\"list-group list-group-flush\">
-                <li class=\"list-group-produit d-flex justify-content-between\">
+                <li class=\"list-group-item d-flex justify-content-between\">
                     <div><b>Total</b></div>
                     <span><b>{{ cart.total }} €</b></span>
                 </li>

@@ -545,7 +545,9 @@
     <service id="App\Form\EventListener\ClearCartListener" class="App\Form\EventListener\ClearCartListener" autowire="true" autoconfigure="true">
       <tag name="kernel.event_subscriber"/>
     </service>
-    <service id="App\Form\EventListener\RemoveCartItem" class="App\Form\EventListener\RemoveCartItem" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\EventListener\RemoveCartItemListener" class="App\Form\EventListener\RemoveCartItemListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+    </service>
     <service id="App\Form\UtilisateurType" class="App\Form\UtilisateurType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1746,6 +1748,7 @@
         <argument key="App\Form\CartItemType" type="service_closure" id="App\Form\CartItemType" on-invalid="ignore_uninitialized"/>
         <argument key="App\Form\CartType" type="service_closure" id="App\Form\CartType" on-invalid="ignore_uninitialized"/>
         <argument key="App\Form\EventListener\ClearCartListener" type="service_closure" id="App\Form\EventListener\ClearCartListener" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Form\EventListener\RemoveCartItemListener" type="service_closure" id="App\Form\EventListener\RemoveCartItemListener" on-invalid="ignore_uninitialized"/>
         <argument key="App\Form\UtilisateurType" type="service_closure" id="App\Form\UtilisateurType" on-invalid="ignore_uninitialized"/>
         <argument key="App\Manager\CartManager" type="service_closure" id="App\Manager\CartManager" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\CategorieRepository" type="service_closure" id="App\Repository\CategorieRepository" on-invalid="ignore_uninitialized"/>
@@ -3726,6 +3729,14 @@
         <argument>form.post_submit</argument>
         <argument type="collection">
           <argument type="service_closure" id="App\Form\EventListener\ClearCartListener"/>
+          <argument>postSubmit</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>form.post_submit</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="App\Form\EventListener\RemoveCartItemListener"/>
           <argument>postSubmit</argument>
         </argument>
         <argument>0</argument>
@@ -8514,6 +8525,8 @@
     <service id=".abstract.instanceof.App\Form\CartType" class="App\Form\CartType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\Form\EventListener\ClearCartListener" class="App\Form\EventListener\ClearCartListener" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EventListener\ClearCartListener" class="App\Form\EventListener\ClearCartListener" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\Form\EventListener\RemoveCartItemListener" class="App\Form\EventListener\RemoveCartItemListener" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EventListener\RemoveCartItemListener" class="App\Form\EventListener\RemoveCartItemListener" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UtilisateurType" class="App\Form\UtilisateurType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UtilisateurType" class="App\Form\UtilisateurType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategorieRepository" class="App\Repository\CategorieRepository" autowire="true" abstract="true"/>

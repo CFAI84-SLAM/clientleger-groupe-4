@@ -5,6 +5,7 @@ namespace App\Factory;
 use App\Entity\Commandes;
 use App\Entity\LigneCommande;
 use App\Entity\Produit;
+use App\Entity\CommandeItem;
 
 /**
  * Class CommandesFactory

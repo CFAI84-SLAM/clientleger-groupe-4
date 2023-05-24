@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\Commandes;
+use App\Entity\Utilisateur;
 
 /**
  * Class CartController
@@ -26,10 +28,11 @@ class CartController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $cart->setUpdatedAt(new \DateTime());
+            /*$cart->setUpdatedAt(new \DateTime());*/
+
             $cartManager->save($cart);
 
-            return $this->redirectToRoute('cart');
+            return $this->redirectToRoute('panier');
         }
 
         return $this->render('cart/index.html.twig', [

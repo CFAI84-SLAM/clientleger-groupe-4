@@ -24,7 +24,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                 ],
             ],
             'repositoryClass' => [
-                2 => 'UtilisateurRepository',
+                2 => 'App\\Repository\\UtilisateurRepository',
             ],
         ],
     ],

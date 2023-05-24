@@ -570,7 +570,9 @@
     <service id="App\Form\EventListener\ClearCartListener" class="App\Form\EventListener\ClearCartListener" autowire="true" autoconfigure="true">
       <tag name="kernel.event_subscriber"/>
     </service>
-    <service id="App\Form\EventListener\RemoveCartItem" class="App\Form\EventListener\RemoveCartItem" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\EventListener\RemoveCartItemListener" class="App\Form\EventListener\RemoveCartItemListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+    </service>
     <service id="App\Form\UtilisateurType" class="App\Form\UtilisateurType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -2661,6 +2663,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>form.post_submit</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="App\Form\EventListener\RemoveCartItemListener"/>
+          <argument>postSubmit</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service_closure" id="response_listener"/>
@@ -2901,14 +2911,6 @@
         <argument>-100</argument>
       </call>
       <call method="addListener">
-        <argument>Symfony\Component\Messenger\Event\WorkerRunningEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="messenger.listener.dispatch_pcntl_signal_listener"/>
-          <argument>onWorkerRunning</argument>
-        </argument>
-        <argument>100</argument>
-      </call>
-      <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="messenger.listener.stop_worker_on_restart_signal_listener"/>
@@ -2923,14 +2925,6 @@
           <argument>onWorkerRunning</argument>
         </argument>
         <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
-        <argument type="collection">
-          <argument type="service_closure" id="messenger.listener.stop_worker_on_sigterm_signal_listener"/>
-          <argument>onWorkerStarted</argument>
-        </argument>
-        <argument>100</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerMessageFailedEvent</argument>
@@ -7796,6 +7790,8 @@
     <service id=".abstract.instanceof.App\Form\CartType" class="App\Form\CartType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\Form\EventListener\ClearCartListener" class="App\Form\EventListener\ClearCartListener" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EventListener\ClearCartListener" class="App\Form\EventListener\ClearCartListener" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\Form\EventListener\RemoveCartItemListener" class="App\Form\EventListener\RemoveCartItemListener" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EventListener\RemoveCartItemListener" class="App\Form\EventListener\RemoveCartItemListener" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UtilisateurType" class="App\Form\UtilisateurType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UtilisateurType" class="App\Form\UtilisateurType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategorieRepository" class="App\Repository\CategorieRepository" autowire="true" abstract="true"/>

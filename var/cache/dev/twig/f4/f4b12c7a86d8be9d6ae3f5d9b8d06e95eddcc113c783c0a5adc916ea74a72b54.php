@@ -57,13 +57,13 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         ";
         // line 11
         $this->displayBlock('header', $context, $blocks);
-        // line 32
+        // line 35
         echo "    </header>
     <body>
         ";
-        // line 34
+        // line 37
         $this->displayBlock('body', $context, $blocks);
-        // line 36
+        // line 39
         echo "    </body>
 </html>
 ";
@@ -117,14 +117,20 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         echo "\">Connexion</a>
                 </div>
                 <div class=\"headerwrap\">
-                    <h1 class=\"main-title centered\">Fast Sushi</h1>
+                    <a style=\"none;\" href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
+        echo "\">
+                        <h1 class=\"main-title centered\">Fast Sushi</h1>
+                    </a>
+
                     <div class=\"logo\">
                         <a href=\"";
-        // line 19
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
         echo "\">
                            <img id=\"shoppingCart\" src=";
-        // line 20
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shopping-cart.png"), "html", null, true);
         echo " width='35' heigth=\"35\">
                         </a>
@@ -146,7 +152,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     }
 
-    // line 34
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,7 +162,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 35
+        // line 38
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -173,7 +179,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     public function getDebugInfo()
     {
-        return array (  160 => 35,  150 => 34,  128 => 20,  124 => 19,  116 => 14,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 36,  65 => 34,  61 => 32,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
+        return array (  166 => 38,  156 => 37,  134 => 23,  130 => 22,  122 => 17,  116 => 14,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 39,  65 => 37,  61 => 35,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -194,7 +200,10 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
                     <a href=\"{{ path('app_login') }}\">Connexion</a>
                 </div>
                 <div class=\"headerwrap\">
-                    <h1 class=\"main-title centered\">Fast Sushi</h1>
+                    <a style=\"none;\" href=\"{{ path('accueil') }}\">
+                        <h1 class=\"main-title centered\">Fast Sushi</h1>
+                    </a>
+
                     <div class=\"logo\">
                         <a href=\"{{ path('panier') }}\">
                            <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='35' heigth=\"35\">
