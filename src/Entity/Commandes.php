@@ -44,7 +44,9 @@ class Commandes
      * @var string
      */
 
-    const STATUS_CART = 'cart';
+    const STATUS_CART = 'panier';
+
+    const STATUS_COMMANDE = 'en préparation';
 
 
     /**

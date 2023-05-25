@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\CartType;
 use App\Manager\CartManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,7 +22,7 @@ class CartController extends AbstractController
     /**
      * @Route("/panier", name="panier")
      */
-    public function index(CartManager $cartManager, Request $request): Response
+    public function index(CartManager $cartManager, Request $request, EntityManagerInterface $entityManager): Response
     {
         $cart = $cartManager->getCurrentCart();
         $form = $this->createForm(CartType::class, $cart);

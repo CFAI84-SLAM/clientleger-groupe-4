@@ -20,6 +20,7 @@
 }
 
 
+
 h1 {
     display: inline-block;
 
@@ -27,7 +28,7 @@ h1 {
 
 body {
     margin: 0%;
-    background: #e9f5ff;
+    background: white;
     font-family: comforta;
 }
 
@@ -54,8 +55,12 @@ body {
 .menu {
     display: flex;
     justify-content: space-evenly;
-    padding: 20px;
     background-color: #f57575;
+}
+
+
+.categories {
+    padding: 20px;
 }
 
 .featuredProducts {
@@ -68,6 +73,7 @@ body {
     position: relative;
     top: -3em;
     left: 90%;
+    max-width: fit-content;
 }
 
 .login {
@@ -90,3 +96,23 @@ body {
     margin: 1em;
 }
 
+.menuLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menuLink:hover {
+    font-weight: bold;
+}
+
+
+.productLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -57,13 +57,13 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         ";
         // line 11
         $this->displayBlock('header', $context, $blocks);
-        // line 35
+        // line 51
         echo "    </header>
     <body>
         ";
-        // line 37
+        // line 53
         $this->displayBlock('body', $context, $blocks);
-        // line 39
+        // line 55
         echo "    </body>
 </html>
 ";
@@ -111,13 +111,13 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         // line 12
         echo "            <div class=\"header\">
                 <div class=\"login\">
-                    <a href=\"";
+                    <a class=\"menuLink\" href=\"";
         // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\">Connexion</a>
                 </div>
                 <div class=\"headerwrap\">
-                    <a style=\"none;\" href=\"";
+                    <a class=\"menuLink\" href=\"";
         // line 17
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\">
@@ -125,7 +125,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
                     </a>
 
                     <div class=\"logo\">
-                        <a href=\"";
+                        <a class=\"menuLink\" href=\"";
         // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier");
         echo "\">
@@ -139,9 +139,34 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
             </div>
 
             <nav class=\"menu\">
-                <div class=\"categories\">Entrées</div>
-                <div class=\"categories\">Plats</div>
-                <div class=\"categories\">Desserts</div>
+                <div class=\"menuButton\">
+                    <a class=\"menuLink\" href=\"";
+        // line 31
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("entrees");
+        echo "\">
+                        <div class=\"categories\">Entrées</div>
+                    </a>
+
+                </div>
+                <div class=\"menuButton\">
+                    <a class=\"menuLink\" href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("plats");
+        echo "\">
+                       <div class=\"categories\">Plats</div>
+                    </a>
+                </div>
+                <div class=\"menuButton\">
+                    <a class=\"menuLink\" href=\"";
+        // line 42
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("desserts");
+        echo "\">
+                      <div class=\"categories\">Desserts</div>
+                    </a>
+                </div>
+
+
+
             </nav>
         ";
         
@@ -152,7 +177,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     }
 
-    // line 37
+    // line 53
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,7 +187,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 38
+        // line 54
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -179,7 +204,7 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
 
     public function getDebugInfo()
     {
-        return array (  166 => 38,  156 => 37,  134 => 23,  130 => 22,  122 => 17,  116 => 14,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 39,  65 => 37,  61 => 35,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
+        return array (  191 => 54,  181 => 53,  162 => 42,  154 => 37,  145 => 31,  134 => 23,  130 => 22,  122 => 17,  116 => 14,  112 => 12,  102 => 11,  89 => 6,  79 => 5,  67 => 55,  65 => 53,  61 => 51,  59 => 11,  54 => 8,  52 => 5,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -197,15 +222,15 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
         {% block header %}
             <div class=\"header\">
                 <div class=\"login\">
-                    <a href=\"{{ path('app_login') }}\">Connexion</a>
+                    <a class=\"menuLink\" href=\"{{ path('app_login') }}\">Connexion</a>
                 </div>
                 <div class=\"headerwrap\">
-                    <a style=\"none;\" href=\"{{ path('accueil') }}\">
+                    <a class=\"menuLink\" href=\"{{ path('accueil') }}\">
                         <h1 class=\"main-title centered\">Fast Sushi</h1>
                     </a>
 
                     <div class=\"logo\">
-                        <a href=\"{{ path('panier') }}\">
+                        <a class=\"menuLink\" href=\"{{ path('panier') }}\">
                            <img id=\"shoppingCart\" src={{ asset('images/shopping-cart.png') }} width='35' heigth=\"35\">
                         </a>
                     </div>
@@ -213,9 +238,25 @@ class __TwigTemplate_383558da4214830cdbeb49ca619e147950667c3e3d8b7e7f0a395401fe0
             </div>
 
             <nav class=\"menu\">
-                <div class=\"categories\">Entrées</div>
-                <div class=\"categories\">Plats</div>
-                <div class=\"categories\">Desserts</div>
+                <div class=\"menuButton\">
+                    <a class=\"menuLink\" href=\"{{ path('entrees') }}\">
+                        <div class=\"categories\">Entrées</div>
+                    </a>
+
+                </div>
+                <div class=\"menuButton\">
+                    <a class=\"menuLink\" href=\"{{ path('plats') }}\">
+                       <div class=\"categories\">Plats</div>
+                    </a>
+                </div>
+                <div class=\"menuButton\">
+                    <a class=\"menuLink\" href=\"{{ path('desserts') }}\">
+                      <div class=\"categories\">Desserts</div>
+                    </a>
+                </div>
+
+
+
             </nav>
         {% endblock %}
     </header>

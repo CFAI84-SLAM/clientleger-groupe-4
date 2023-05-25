@@ -33,7 +33,7 @@ class Produit
     /**
      * @var string|null
      *
-     * @ORM\Column(name="prixHT", type="decimal", precision=15, scale=3, nullable=true)
+     * @ORM\Column(name="prixHT", type="decimal", precision=15, scale=2, nullable=true)
      */
     private $prixht;
 

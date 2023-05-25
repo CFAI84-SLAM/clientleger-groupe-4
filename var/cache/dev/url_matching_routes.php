@@ -9,7 +9,11 @@ return [
     false, // $matchHost
     [ // $staticRoutes
         '/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
+        '/commande' => [[['_route' => 'commande', '_controller' => 'App\\Controller\\CommandesController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/entrees' => [[['_route' => 'entrees', '_controller' => 'App\\Controller\\HomeController::entrees'], null, null, null, false, false, null]],
+        '/plats' => [[['_route' => 'plats', '_controller' => 'App\\Controller\\HomeController::plats'], null, null, null, false, false, null]],
+        '/desserts' => [[['_route' => 'desserts', '_controller' => 'App\\Controller\\HomeController::entree'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/utilisateur' => [[['_route' => 'app_utilisateur_index', '_controller' => 'App\\Controller\\UtilisateurController::index'], null, ['GET' => 0], null, true, false, null]],

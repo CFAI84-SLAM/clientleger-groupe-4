@@ -11,15 +11,15 @@
         {% block header %}
             <div class="header">
                 <div class="login">
-                    <a href="{{ path('app_login') }}">Connexion</a>
+                    <a class="menuLink" href="{{ path('app_login') }}">Connexion</a>
                 </div>
                 <div class="headerwrap">
-                    <a style="none;" href="{{ path('accueil') }}">
+                    <a class="menuLink" href="{{ path('accueil') }}">
                         <h1 class="main-title centered">Fast Sushi</h1>
                     </a>
 
                     <div class="logo">
-                        <a href="{{ path('panier') }}">
+                        <a class="menuLink" href="{{ path('panier') }}">
                            <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">
                         </a>
                     </div>
@@ -27,9 +27,25 @@
             </div>
 
             <nav class="menu">
-                <div class="categories">Entrées</div>
-                <div class="categories">Plats</div>
-                <div class="categories">Desserts</div>
+                <div class="menuButton">
+                    <a class="menuLink" href="{{ path('entrees') }}">
+                        <div class="categories">Entrées</div>
+                    </a>
+
+                </div>
+                <div class="menuButton">
+                    <a class="menuLink" href="{{ path('plats') }}">
+                       <div class="categories">Plats</div>
+                    </a>
+                </div>
+                <div class="menuButton">
+                    <a class="menuLink" href="{{ path('desserts') }}">
+                      <div class="categories">Desserts</div>
+                    </a>
+                </div>
+
+
+
             </nav>
         {% endblock %}
     </header>

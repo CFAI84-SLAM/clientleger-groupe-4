@@ -60,6 +60,17 @@ class CartManager
         return $cart;
     }
 
+
+    /**
+     * @return Commandes
+     */
+    public function updateState(): Commandes
+    {
+        return $this->cartFactory->update();
+    }
+
+
+
     /**
      * Persists le panier dans la bdd et la session.
      *

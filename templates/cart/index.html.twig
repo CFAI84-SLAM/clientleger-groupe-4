@@ -25,8 +25,8 @@
             <div class="card-header bg-dark text-white d-flex">
                 <h5>idProduit</h5>
                 <div class="ml-auto">
-                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-warning'}}) }}
-                    {{ form_widget(form.clear, {'attr': {'class': 'btn btn-light'}}) }}
+                    {{ form_widget(form.enregistrer, {'attr': {'class': 'btn btn-warning'}}) }}
+                    {{ form_widget(form.vider, {'attr': {'class': 'btn btn-light'}}) }}
                 </div>
             </div>
             <ul class="list-group list-group-flush">
@@ -49,7 +49,7 @@
                                         {{ form_errors(item.quantite) }}
                                     </div>
                                 </div>
-                                {{ form_widget(item.remove, {'attr': {'class': 'btn btn-dark btn-sm'}}) }}
+                                {{ form_widget(item.supprimer, {'attr': {'class': 'btn btn-dark btn-sm'}}) }}
                             </div>
                         </div>
                         <div class="flex-fill mr-2 text-right">
@@ -73,7 +73,7 @@
                 </li>
             </ul>
             <div class="card-body">
-                <a href="#" class="btn btn-warning w-100">Payer</a>
+                <a href="{{ path('commande') }}" class="btn btn-warning w-100">Commander</a>
             </div>
         </div>
     </div>

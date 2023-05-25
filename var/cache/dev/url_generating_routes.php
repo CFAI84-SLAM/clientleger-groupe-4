@@ -4,7 +4,11 @@
 
 return [
     'panier' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/panier']], [], [], []],
+    'commande' => [[], ['_controller' => 'App\\Controller\\CommandesController::index'], [], [['text', '/commande']], [], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
+    'entrees' => [[], ['_controller' => 'App\\Controller\\HomeController::entrees'], [], [['text', '/entrees']], [], [], []],
+    'plats' => [[], ['_controller' => 'App\\Controller\\HomeController::plats'], [], [['text', '/plats']], [], [], []],
+    'desserts' => [[], ['_controller' => 'App\\Controller\\HomeController::entree'], [], [['text', '/desserts']], [], [], []],
     'produit.detail' => [['id'], ['_controller' => 'App\\Controller\\ProductController::detail'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produit']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],

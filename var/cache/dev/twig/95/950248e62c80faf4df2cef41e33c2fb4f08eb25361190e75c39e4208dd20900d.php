@@ -122,11 +122,11 @@ class __TwigTemplate_534ab2f5e717ba3449beaebaa643e7a00ec6632a57182e1e0445391f5c8
                 <div class=\"ml-auto\">
                     ";
         // line 28
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "save", [], "any", false, false, false, 28), 'widget', ["attr" => ["class" => "btn btn-warning"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "enregistrer", [], "any", false, false, false, 28), 'widget', ["attr" => ["class" => "btn btn-warning"]]);
         echo "
                     ";
         // line 29
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), "clear", [], "any", false, false, false, 29), 'widget', ["attr" => ["class" => "btn btn-light"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), "vider", [], "any", false, false, false, 29), 'widget', ["attr" => ["class" => "btn btn-light"]]);
         echo "
                 </div>
             </div>
@@ -164,7 +164,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                                 </div>
                                 ";
             // line 52
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, $context["item"], "remove", [], "any", false, false, false, 52), 'widget', ["attr" => ["class" => "btn btn-dark btn-sm"]]);
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, $context["item"], "supprimer", [], "any", false, false, false, 52), 'widget', ["attr" => ["class" => "btn btn-dark btn-sm"]]);
             echo "
                             </div>
                         </div>
@@ -206,7 +206,10 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                 </li>
             </ul>
             <div class=\"card-body\">
-                <a href=\"#\" class=\"btn btn-warning w-100\">Payer</a>
+                <a href=\"";
+        // line 76
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande");
+        echo "\" class=\"btn btn-warning w-100\">Commander</a>
             </div>
         </div>
     </div>
@@ -231,7 +234,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
 
     public function getDebugInfo()
     {
-        return array (  204 => 72,  192 => 63,  188 => 62,  184 => 60,  174 => 56,  167 => 52,  161 => 49,  157 => 47,  155 => 45,  154 => 43,  147 => 39,  140 => 34,  136 => 33,  129 => 29,  125 => 28,  117 => 23,  112 => 20,  106 => 17,  103 => 16,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  211 => 76,  204 => 72,  192 => 63,  188 => 62,  184 => 60,  174 => 56,  167 => 52,  161 => 49,  157 => 47,  155 => 45,  154 => 43,  147 => 39,  140 => 34,  136 => 33,  129 => 29,  125 => 28,  117 => 23,  112 => 20,  106 => 17,  103 => 16,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,8 +266,8 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
             <div class=\"card-header bg-dark text-white d-flex\">
                 <h5>idProduit</h5>
                 <div class=\"ml-auto\">
-                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-warning'}}) }}
-                    {{ form_widget(form.clear, {'attr': {'class': 'btn btn-light'}}) }}
+                    {{ form_widget(form.enregistrer, {'attr': {'class': 'btn btn-warning'}}) }}
+                    {{ form_widget(form.vider, {'attr': {'class': 'btn btn-light'}}) }}
                 </div>
             </div>
             <ul class=\"list-group list-group-flush\">
@@ -287,7 +290,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                                         {{ form_errors(item.quantite) }}
                                     </div>
                                 </div>
-                                {{ form_widget(item.remove, {'attr': {'class': 'btn btn-dark btn-sm'}}) }}
+                                {{ form_widget(item.supprimer, {'attr': {'class': 'btn btn-dark btn-sm'}}) }}
                             </div>
                         </div>
                         <div class=\"flex-fill mr-2 text-right\">
@@ -311,7 +314,7 @@ $context["item"], "quantite", [], "any", false, false, false, 45), "vars", [], "
                 </li>
             </ul>
             <div class=\"card-body\">
-                <a href=\"#\" class=\"btn btn-warning w-100\">Payer</a>
+                <a href=\"{{ path('commande') }}\" class=\"btn btn-warning w-100\">Commander</a>
             </div>
         </div>
     </div>

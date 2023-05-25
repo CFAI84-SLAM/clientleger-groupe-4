@@ -32,7 +32,7 @@ class ClearCartListener implements EventSubscriberInterface
         }
 
         // Is the clear button clicked?
-        if (!$form->get('clear')->isClicked()) {
+        if (!$form->get('vider')->isClicked()) {
             return;
         }
 
