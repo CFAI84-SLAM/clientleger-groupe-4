@@ -39,6 +39,26 @@ class CommandeItemRepository extends ServiceEntityRepository
         }
     }
 
+    public function mostBuyed(): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql ='
+                SELECT Id_Produit FROM commande_item c 
+                GROUP BY c.Id_Produit
+                ORDER BY SUM(c.quantite) DESC
+                LIMIT 4
+        
+        ';
+
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery();
+
+        return $resultSet->fetchAllAssociative();
+
+    }
+
+
 //    /**
 //     * @return CommandeItem[] Returns an array of CommandeItem objects
 //     */

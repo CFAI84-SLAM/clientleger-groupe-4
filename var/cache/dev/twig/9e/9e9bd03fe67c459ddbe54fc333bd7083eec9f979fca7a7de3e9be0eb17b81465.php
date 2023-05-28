@@ -68,36 +68,37 @@ class __TwigTemplate_12d2b913d0bbc7b1afb5fd773dcb4f937467b7111ecf6d533a3f0d05154
         echo "
 
         <div class=\"featuredProducts\">
+            <h2>Plats principaux</h2>
             <div class=\"productsDisp\">
                 ";
-        // line 9
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 9, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 10
+            // line 11
             echo "                    <div class=\"productWrap col-md-4\">
                         <a href=\"";
-            // line 11
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit.detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "idProduit", [], "any", false, false, false, 11)]), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit.detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "idProduit", [], "any", false, false, false, 12)]), "html", null, true);
             echo "\" class=\"btn btn-dark productLink\">
                             <div class=\"card mb-4\">
                                 <img src=\"";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "photo", [], "any", false, false, false, 13), "html", null, true);
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "photo", [], "any", false, false, false, 14), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 13), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 14), "html", null, true);
             echo "\" class=\"card-img-top\" width=\"200px\">
                                 <div class=\"card-body\">
                                     <h5 class=\"card-title\">";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 15), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 16), "html", null, true);
             echo "</h5>
 
                                     <div class=\"d-flex justify-content-between align-item-center\">
 
                                         <span class=\"h5 mt-auto\">";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prixht", [], "any", false, false, false, 19), "html", null, true);
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prixht", [], "any", false, false, false, 20), "html", null, true);
             echo " €</span>
                                     </div>
                                 </div>
@@ -109,7 +110,7 @@ class __TwigTemplate_12d2b913d0bbc7b1afb5fd773dcb4f937467b7111ecf6d533a3f0d05154
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 27
         echo "            </div>
         </div>
 
@@ -134,7 +135,7 @@ class __TwigTemplate_12d2b913d0bbc7b1afb5fd773dcb4f937467b7111ecf6d533a3f0d05154
 
     public function getDebugInfo()
     {
-        return array (  113 => 26,  100 => 19,  93 => 15,  86 => 13,  81 => 11,  78 => 10,  74 => 9,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  114 => 27,  101 => 20,  94 => 16,  87 => 14,  82 => 12,  79 => 11,  75 => 10,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -146,6 +147,7 @@ class __TwigTemplate_12d2b913d0bbc7b1afb5fd773dcb4f937467b7111ecf6d533a3f0d05154
 
 
         <div class=\"featuredProducts\">
+            <h2>Plats principaux</h2>
             <div class=\"productsDisp\">
                 {% for product in products %}
                     <div class=\"productWrap col-md-4\">

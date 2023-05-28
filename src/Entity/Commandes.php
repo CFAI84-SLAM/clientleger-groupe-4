@@ -213,5 +213,28 @@ class Commandes
         return $total;
     }
 
+    /**
+     * Calculates the order tva.
+     *
+     * @return float
+     */
+    public function getTVA(): float
+    {
+        $totalHT = 0;
+
+        foreach ($this->getItems() as $produit) {
+            $totalHT += $produit->getTotalHT();
+        }
+
+        $total = 0;
+
+        foreach ($this->getItems() as $produit) {
+            $total += $produit->getTotal();
+        }
+
+        $tva = $total-$totalHT;
+        return $tva;
+    }
+
 
 }

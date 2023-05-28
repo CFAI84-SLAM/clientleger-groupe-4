@@ -98,6 +98,16 @@ class CommandeItem
      */
     public function getTotal(): float
     {
+        return ($this->getProduit()->getPrixht() * $this->getQuantite())*1.20;
+    }
+
+    /**
+
+     *
+     * @return float|int
+     */
+    public function getTotalHT(): float
+    {
         return $this->getProduit()->getPrixht() * $this->getQuantite();
     }
 }

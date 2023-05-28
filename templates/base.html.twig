@@ -7,50 +7,78 @@
         {% endblock %}
 
     </head>
-    <header>
-        {% block header %}
-            <div class="header">
-                <div class="login">
-                    <a class="menuLink" href="{{ path('app_login') }}">Connexion</a>
-                </div>
-                <div class="headerwrap">
-                    <a class="menuLink" href="{{ path('accueil') }}">
-                        <h1 class="main-title centered">Fast Sushi</h1>
-                    </a>
-
-                    <div class="logo">
-                        <a class="menuLink" href="{{ path('panier') }}">
-                           <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">
+    <body>
+    <div id="page">
+        <header>
+            {% block header %}
+                <div class="header">
+                    <div class="login">
+                        <a class="menuLink" href="{{ path('app_login') }}">Connexion</a>
+                    </div>
+                    <div class="headerwrap">
+                        <a class="menuLink" href="{{ path('accueil') }}">
+                            <h1 class="main-title centered">Fast Sushi</h1>
                         </a>
+
+                        <div class="logo">
+                            <a class="menuLink" href="{{ path('panier') }}">
+                               <img id="shoppingCart" src={{ asset('images/shopping-cart.png') }} width='35' heigth="35">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <nav class="menu">
-                <div class="menuButton">
-                    <a class="menuLink" href="{{ path('entrees') }}">
-                        <div class="categories">Entrées</div>
-                    </a>
+                <nav class="menu">
+                    <div class="menuButton">
+                        <a class="menuLink" href="{{ path('entrees') }}">
+                            <div class="categories">Entrées</div>
+                        </a>
 
+                    </div>
+                    <div class="menuButton">
+                        <a class="menuLink" href="{{ path('plats') }}">
+                           <div class="categories">Plats</div>
+                        </a>
+                    </div>
+                    <div class="menuButton">
+                        <a class="menuLink" href="{{ path('desserts') }}">
+                          <div class="categories">Desserts</div>
+                        </a>
+                    </div>
+
+
+
+                </nav>
+            {% endblock %}
+        </header>
+
+
+            {% block body %}
+
+            {% endblock %}
+
+
+        <footer>
+            {% block footer %}
+                <div class="footer-main">
+                    <div class="footer-columns">
+                        <div class="fcol fdesc">
+                            <h5 class="col-title">Fast Sushi</h5>
+                            <p class="desc-text">Fast Sushi est un restaurant de cuisine japonaise spécialisé dans les sushi.</p>
+                        </div>
+                        <div class="fcol address">
+                            <h5 class="col-title">Adresses</h5>
+                            <p>Nos restaurants se situent dans une multitude de ville de France : </br>Lyon, Paris, Bordeaux, Marseille, Avignon, Strasbourg</p>
+                        </div>
+                        <div class="fcol horaires">
+                            <h5 class="col-title">Horaires d'ouverture</h5>
+                            <p>Mardi - Samedi</p>
+                            <p>11h - 22h</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="menuButton">
-                    <a class="menuLink" href="{{ path('plats') }}">
-                       <div class="categories">Plats</div>
-                    </a>
-                </div>
-                <div class="menuButton">
-                    <a class="menuLink" href="{{ path('desserts') }}">
-                      <div class="categories">Desserts</div>
-                    </a>
-                </div>
-
-
-
-            </nav>
-        {% endblock %}
-    </header>
-    <body>
-        {% block body %}
-        {% endblock %}
+            {% endblock %}
+        </footer>
+    </div>
     </body>
 </html>

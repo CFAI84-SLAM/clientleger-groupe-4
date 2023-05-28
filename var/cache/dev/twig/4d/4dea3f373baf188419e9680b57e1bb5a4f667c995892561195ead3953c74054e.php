@@ -102,39 +102,54 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
             // line 12
             echo "        <div class=\"mb-3\">
-            You are logged in as ";
+            Vous êtes connecté en tant que ";
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "userIdentifier", [], "any", false, false, false, 13), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Logout</a>
+            echo "\">Se déconnecter</a>
         </div>
     ";
         }
         // line 16
-        echo "
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"";
-        // line 19
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 19, $this->source); })()), "html", null, true);
+        echo "    <div class=\"con-page\">
+
+
+    <h1 class=\"h3 mb-3 font-weight-normal\">Se connecter</h1>
+        <div class=\"log-form\">
+            <label for=\"inputEmail\">Email</label>
+            <input type=\"email\" value=\"";
+        // line 22
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 22, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Password</label>
-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+        </div>
+    <div class=\"log-form\">
+        <label for=\"inputPassword\">Mot de passe</label>
+        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+    </div>
+
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"";
-        // line 24
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
 
     ";
-        // line 37
+        // line 44
         echo "
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+    <button style=\"margin-bottom: 2%;\" class=\"btn btn-lg btn-primary\" type=\"submit\">
+        Connexion
     </button>
+
+    <a href=\"";
+        // line 49
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_utilisateur_new");
+        echo "\">
+        <div>Créer un compte</div>
+    </a>
+    </div>
 </form>
 ";
         
@@ -157,7 +172,7 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
 
     public function getDebugInfo()
     {
-        return array (  134 => 37,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  148 => 49,  141 => 44,  135 => 31,  123 => 22,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,15 +189,22 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
 
     {% if app.user %}
         <div class=\"mb-3\">
-            You are logged in as {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
+            Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Se déconnecter</a>
         </div>
     {% endif %}
+    <div class=\"con-page\">
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Password</label>
-    <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+
+    <h1 class=\"h3 mb-3 font-weight-normal\">Se connecter</h1>
+        <div class=\"log-form\">
+            <label for=\"inputEmail\">Email</label>
+            <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
+        </div>
+    <div class=\"log-form\">
+        <label for=\"inputPassword\">Mot de passe</label>
+        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+    </div>
+
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"{{ csrf_token('authenticate') }}\"
@@ -199,9 +221,14 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
         </div>
     #}
 
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+    <button style=\"margin-bottom: 2%;\" class=\"btn btn-lg btn-primary\" type=\"submit\">
+        Connexion
     </button>
+
+    <a href=\"{{ path('app_utilisateur_new') }}\">
+        <div>Créer un compte</div>
+    </a>
+    </div>
 </form>
 {% endblock %}
 ", "security/login.html.twig", "/var/www/clientleger-groupe-4/templates/security/login.html.twig");

@@ -85,17 +85,17 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Utilisateur</h1>
+        echo "    <div class=\"reg-page\">
+        <h1>Inscription</h1>
 
-    ";
-        // line 8
+        ";
+        // line 9
         echo twig_include($this->env, $context, "utilisateur/_form.html.twig");
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_utilisateur_index");
-        echo "\">back to list</a>
+
+    </div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +117,7 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +127,14 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
 {% block title %}New Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Create new Utilisateur</h1>
+    <div class=\"reg-page\">
+        <h1>Inscription</h1>
 
-    {{ include('utilisateur/_form.html.twig') }}
+        {{ include('utilisateur/_form.html.twig') }}
 
-    <a href=\"{{ path('app_utilisateur_index') }}\">back to list</a>
+
+    </div>
+
 {% endblock %}
 ", "utilisateur/new.html.twig", "/var/www/clientleger-groupe-4/templates/utilisateur/new.html.twig");
     }

@@ -43,19 +43,22 @@ body {
 
 .header {
     background: #ff8282;
+
 }
 
 .headerwrap {
     display: block;
     justify-content: center;
     background: #ff8282;
-    margin: 0%;
+    margin: 0%
+
 }
 
 .menu {
     display: flex;
     justify-content: space-evenly;
     background-color: #f57575;
+    margin-bottom: 10%;
 }
 
 
@@ -67,6 +70,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30%;
 }
 
 .logo {
@@ -115,4 +119,233 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+
+.mainCart {
+    display: flex;
+    flex-direction: row;
+    max-width: 70%;
+    margin: 7% 0 7% 0;
+    background-color: #282727;
+    color: aliceblue;
+    min-height: 21.2em;
+}
+
+.flex-fill.mr-2 {
+    display: flex;
+    align-items: center;
+}
+
+.cartTitle {
+    margin-top: 5%;
+}
+
+.list-group-produit {
+    display: flex;
+    margin-bottom: 2%;
+    align-items: center;
+}
+
+.nameTag {
+
+}
+
+.col-md-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 7%;
+}
+
+.priceTotal {
+    margin-top: 90%;
+}
+
+.form-control{
+    max-width: 60%;
+}
+
+.card-header.d-flex {
+    margin: 3%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.orderButton {
+    width: fit-content;
+    padding: 10%;
+    background: #ff8282;
+    border-radius: 5px;
+    top: 10px;
+    position: relative;
+    left: 22%;
+
+}
+
+.cart-total {
+
+    width: 80px;
+    margin-bottom: 15%;
+}
+
+
+.card-body>a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    padding: 7px;
+    background: #c3c3c3;
+    border-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px 1px #505050;
+    border-style: none;
+}
+
+.form-inline.mt-2 {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.mb-0.mr-2 {
+    max-width: 23%;
+}
+
+.card-price {
+    width: 90px;
+}
+
+.cartLeft {
+    width: 81em;
+}
+
+.cart-title {
+    margin: 0 0 0 3%;
+    width: 130px;
+}
+
+
+h2 {
+    margin-bottom: 5%;
+}
+
+
+.footer-main {
+    background-color: #282727;
+    color: white;
+    padding-top: 2%;
+
+}
+
+#page {position: relative; min-height: 100%; overflow: hidden; padding-bottom: 305px;}
+html {height: 100%; min-height: 100%;}
+body {height: 100%;}
+
+.footer-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.fcol {
+    max-width: 20%;
+}
+
+footer {
+    position: absolute;
+    background-color: #282727;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 285px;
+}
+
+
+.photoBcase, .photoAcase {
+    width: 28%;
+}
+
+.photoCcase {
+   width: 50%;
+}
+
+
+
+.showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30%;
+}
+
+.photoSC {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.photoCase {position: relative; padding-top: 100%; overflow: hidden;}
+.photoCase img {position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover;}
+
+.fline {
+    display: flex;
+    margin: 0 2% 0 2%
+}
+
+.reg-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.con-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
+
+}
+
+div#utilisateur>div {
+    margin-bottom: 4%;
+}
+
+
+
+div#utilisateur>div>label {
+    min-width: 35%;
+    display: inline-block;
+
+}
+
+.reg-page>form {
+    width: 23%;
+}
+
+.alert-info {
+    margin-bottom: 30%;
+}
+
+.product-col {
+    width: 30%;
+}
+
+.prod-bod {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

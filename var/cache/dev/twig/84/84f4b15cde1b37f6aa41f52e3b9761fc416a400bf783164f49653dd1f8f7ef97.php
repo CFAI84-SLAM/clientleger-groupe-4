@@ -86,56 +86,60 @@ class __TwigTemplate_6554b21b857b537a7d9522456e5410ea4fc621624b29354d483cbcc1e33
 
         // line 6
         echo "    <div class=\"container\">
-        <div class=\"row mt-3 mb-4\">
-            <div class=\"col-md-4\">
-                <img src=\"https://via.placeholder.com/600x400\" alt=\"";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 9, $this->source); })()), "nom", [], "any", false, false, false, 9), "html", null, true);
-        echo "\" class=\"img-fluid\">
+        <div class=\"prod-bod row mt-3 mb-4\">
+            <div class=\"product-col col-md-4\">
+                <div class=\"photoCase\">
+                 <img src=\"/public/images/sushitest.jpeg\" alt=\"";
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 10, $this->source); })()), "nom", [], "any", false, false, false, 10), "html", null, true);
+        echo "\" class=\"img-fluid product-img\">
+                </div>
             </div>
 
 
-    <div class=\"col-md-8\">
-        <h1 class=\"mt-4 mt-md-0\">";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 14, $this->source); })()), "nom", [], "any", false, false, false, 14), "html", null, true);
+            <div class=\"col-md-8\">
+                <h1 class=\"mt-4 mt-md-0\">";
+        // line 16
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), "html", null, true);
         echo "</h1>
-        <h2>";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 15, $this->source); })()), "prixht", [], "any", false, false, false, 15), "html", null, true);
-        echo " €</h2>
-        <hr>
-        <b>Description: </b>
-        ";
+                <h3>PrixHT</h3>
+                <h2>";
         // line 18
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'form_start', ["attr" => ["class" => "mt-4 p-4 bg-light"]]);
-        echo "
-        <div class=\"form-group\">
-            ";
-        // line 20
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), "quantite", [], "any", false, false, false, 20), 'label');
-        echo "
-            ";
-        // line 21
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "quantite", [], "any", false, false, false, 21), 'widget', ["attr" => ["class" => ("form-control " . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,         // line 23
-(isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "quantite", [], "any", false, false, false, 23), "vars", [], "any", false, false, false, 23), "valid", [], "any", false, false, false, 23)) ? ("") : ("is-invalid")))]]);
-        // line 25
-        echo "
-            <div class=\"invalid-feedback\">
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 18, $this->source); })()), "prixht", [], "any", false, false, false, 18), "html", null, true);
+        echo " €</h2>
+                <hr>
                 ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_start', ["attr" => ["class" => "mt-4 p-4 bg-light"]]);
+        echo "
+                <div class=\"form-group\">
+                    ";
+        // line 22
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "quantite", [], "any", false, false, false, 22), 'label');
+        echo "
+                    ";
+        // line 23
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "quantite", [], "any", false, false, false, 23), 'widget', ["attr" => ["class" => ("form-control " . ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,         // line 25
+(isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "quantite", [], "any", false, false, false, 25), "vars", [], "any", false, false, false, 25), "valid", [], "any", false, false, false, 25)) ? ("") : ("is-invalid")))]]);
         // line 27
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 27, $this->source); })()), "quantite", [], "any", false, false, false, 27), 'errors');
+        echo "
+                    <div class=\"invalid-feedback\">
+                        ";
+        // line 29
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 29, $this->source); })()), "quantite", [], "any", false, false, false, 29), 'errors');
+        echo "
+                    </div>
+                </div>
+                ";
+        // line 32
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 32, $this->source); })()), "add", [], "any", false, false, false, 32), 'widget', ["attr" => ["class" => "btn btn-warning w-25"]]);
+        echo "
+                ";
+        // line 33
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 33, $this->source); })()), 'form_end');
         echo "
             </div>
         </div>
-        ";
-        // line 30
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 30, $this->source); })()), "add", [], "any", false, false, false, 30), 'widget', ["attr" => ["class" => "btn btn-warning w-25"]]);
-        echo "
-        ";
-        // line 31
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), 'form_end');
-        echo "
     </div>
 ";
         
@@ -158,7 +162,7 @@ class __TwigTemplate_6554b21b857b537a7d9522456e5410ea4fc621624b29354d483cbcc1e33
 
     public function getDebugInfo()
     {
-        return array (  137 => 31,  133 => 30,  127 => 27,  123 => 25,  121 => 23,  120 => 21,  116 => 20,  111 => 18,  105 => 15,  101 => 14,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 33,  135 => 32,  129 => 29,  125 => 27,  123 => 25,  122 => 23,  118 => 22,  113 => 20,  108 => 18,  103 => 16,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -169,31 +173,35 @@ class __TwigTemplate_6554b21b857b537a7d9522456e5410ea4fc621624b29354d483cbcc1e33
 
 {% block body %}
     <div class=\"container\">
-        <div class=\"row mt-3 mb-4\">
-            <div class=\"col-md-4\">
-                <img src=\"https://via.placeholder.com/600x400\" alt=\"{{ product.nom }}\" class=\"img-fluid\">
+        <div class=\"prod-bod row mt-3 mb-4\">
+            <div class=\"product-col col-md-4\">
+                <div class=\"photoCase\">
+                 <img src=\"/public/images/sushitest.jpeg\" alt=\"{{ product.nom }}\" class=\"img-fluid product-img\">
+                </div>
             </div>
 
 
-    <div class=\"col-md-8\">
-        <h1 class=\"mt-4 mt-md-0\">{{ product.nom }}</h1>
-        <h2>{{ product.prixht }} €</h2>
-        <hr>
-        <b>Description: </b>
-        {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light'}}) }}
-        <div class=\"form-group\">
-            {{ form_label(form.quantite) }}
-            {{ form_widget(form.quantite, {
-                'attr': {
-                    'class': 'form-control ' ~ (form.quantite.vars.valid ? '' : 'is-invalid')
-                }
-            }) }}
-            <div class=\"invalid-feedback\">
-                {{ form_errors(form.quantite) }}
+            <div class=\"col-md-8\">
+                <h1 class=\"mt-4 mt-md-0\">{{ product.nom }}</h1>
+                <h3>PrixHT</h3>
+                <h2>{{ product.prixht }} €</h2>
+                <hr>
+                {{ form_start(form, {'attr': {'class': 'mt-4 p-4 bg-light'}}) }}
+                <div class=\"form-group\">
+                    {{ form_label(form.quantite) }}
+                    {{ form_widget(form.quantite, {
+                        'attr': {
+                            'class': 'form-control ' ~ (form.quantite.vars.valid ? '' : 'is-invalid')
+                        }
+                    }) }}
+                    <div class=\"invalid-feedback\">
+                        {{ form_errors(form.quantite) }}
+                    </div>
+                </div>
+                {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
+                {{ form_end(form) }}
             </div>
         </div>
-        {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
-        {{ form_end(form) }}
     </div>
 {% endblock %}
 ", "product/detail.html.twig", "/var/www/clientleger-groupe-4/templates/product/detail.html.twig");

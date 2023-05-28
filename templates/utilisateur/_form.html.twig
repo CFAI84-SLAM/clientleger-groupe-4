@@ -1,4 +1,17 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-<button class="btn">{{ button_label|default('Save') }}</button>
+<button class="btn">{{ button_label|default("S'inscrire") }}</button>
 {{ form_end(form) }}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+    document.querySelector("input[name = 'utilisateur[nom]']").value = '';
+    document.querySelector("input[name = 'utilisateur[prenom]']").value = '';
+    document.querySelector("input[name = 'utilisateur[adresse]']").value = '';
+
+</script>
+
+{% endblock %}

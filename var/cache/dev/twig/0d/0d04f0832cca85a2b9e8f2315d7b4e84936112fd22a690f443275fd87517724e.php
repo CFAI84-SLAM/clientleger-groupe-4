@@ -27,6 +27,7 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
         $this->parent = false;
 
         $this->blocks = [
+            'javascript' => [$this, 'block_javascript'],
         ];
     }
 
@@ -48,18 +49,50 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
         echo "
 <button class=\"btn\">";
         // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "S'inscrire")) : ("S'inscrire")), "html", null, true);
         echo "</button>
 ";
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
         echo "
+
+
 ";
+        // line 7
+        $this->displayBlock('javascript', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 8
+        echo "
+<script type=\"text/javascript\">
+   
+    document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+
+</script>
+
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -75,15 +108,27 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  81 => 8,  62 => 7,  56 => 4,  52 => 3,  48 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-<button class=\"btn\">{{ button_label|default('Save') }}</button>
+<button class=\"btn\">{{ button_label|default(\"S'inscrire\") }}</button>
 {{ form_end(form) }}
-", "utilisateur/_form.html.twig", "/var/www/clientleger-groupe-4/templates/utilisateur/_form.html.twig");
+
+
+{% block javascript %}
+
+<script type=\"text/javascript\">
+   
+    document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+
+</script>
+
+{% endblock %}", "utilisateur/_form.html.twig", "/var/www/clientleger-groupe-4/templates/utilisateur/_form.html.twig");
     }
 }

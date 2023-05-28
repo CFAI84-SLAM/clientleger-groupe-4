@@ -3,20 +3,24 @@ namespace App\Controller;
 
 use App\Entity\Categorie;
 use App\Repository\CategorieRepository;
+use App\Repository\CommandesRepository;
 use App\Repository\ProduitRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\CommandeItemRepository;
 
 class HomeController extends AbstractController {
     /**
      * @Route("/", name="accueil")
      */
 
-    public function index(ProduitRepository $productRepository): Response
+    public function index(ProduitRepository $productRepository, CommandeItemRepository $commandesItemRepository): Response
     {
 
-        return $this->render('home.html.twig', ['products' => $productRepository->findAll()]);
+        $mostbuyed = $commandesItemRepository->mostBuyed();
+        $products = $productRepository->findBy(array('idProduit' => array_column($mostbuyed, 'Id_Produit')));
+        return $this->render('home.html.twig', ['products' => $products]);
     }
 
 

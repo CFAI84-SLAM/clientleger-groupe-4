@@ -104,13 +104,62 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
                             </div>
                         </a>
                     </div>
+
+
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "            </div>
+        // line 29
+        echo "
+            </div>
+
+        </div>
+
+        <div class=\"showcase\">
+            <h2>Découvrez les délices de la cuisine japonaise</h2>
+            <div class=\"photoSC\">
+                <div class=\"photoBcase\">
+                    <div class=\"photoCase\">
+                        <img src=\"images/sushi1.jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                    </div>
+
+                </div>
+                <div class=\"photoAcase\">
+                    <div class=\"fline\" style=\"margin-bottom: 4%;\">
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/sushi2.jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/sushi3.jpg\" style=\"margin-left: 5%;\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=\"fline\">
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/standard (2).jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/standard (4).jpg\"  style=\"margin-left: 5%;\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"photoBcase\">
+                    <div class=\"photoCase\">
+                        <img src=\"images/standard (3).jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                    </div>
+
+                </div>
+            </div>
         </div>
     ";
         
@@ -133,7 +182,7 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
 
     public function getDebugInfo()
     {
-        return array (  113 => 27,  100 => 20,  93 => 16,  86 => 14,  81 => 12,  78 => 11,  74 => 10,  68 => 6,  58 => 5,  35 => 3,);
+        return array (  115 => 29,  100 => 20,  93 => 16,  86 => 14,  81 => 12,  78 => 11,  74 => 10,  68 => 6,  58 => 5,  35 => 3,);
     }
 
     public function getSourceContext()
@@ -163,7 +212,56 @@ class __TwigTemplate_eccdac2fd747a041253ac4507510a94e212ba123f91d841537800e69e26
                             </div>
                         </a>
                     </div>
+
+
                 {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class=\"showcase\">
+            <h2>Découvrez les délices de la cuisine japonaise</h2>
+            <div class=\"photoSC\">
+                <div class=\"photoBcase\">
+                    <div class=\"photoCase\">
+                        <img src=\"images/sushi1.jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                    </div>
+
+                </div>
+                <div class=\"photoAcase\">
+                    <div class=\"fline\" style=\"margin-bottom: 4%;\">
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/sushi2.jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/sushi3.jpg\" style=\"margin-left: 5%;\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=\"fline\">
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/standard (2).jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                        <div class=\"photoCcase\">
+                            <div class=\"photoCase\">
+                                <img src=\"images/standard (4).jpg\"  style=\"margin-left: 5%;\" width=\"100\" height=\"100\" class=\"footer-image\">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"photoBcase\">
+                    <div class=\"photoCase\">
+                        <img src=\"images/standard (3).jpg\" width=\"100\" height=\"100\" class=\"footer-image\">
+                    </div>
+
+                </div>
             </div>
         </div>
     {% endblock %}

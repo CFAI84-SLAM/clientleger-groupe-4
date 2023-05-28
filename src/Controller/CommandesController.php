@@ -25,6 +25,11 @@ class CommandesController extends AbstractController
      */
     public function index(CartManager $cartManager, Request $request, EntityManagerInterface $entityManager, CommandesFactory $commandesFactory): Response
     {
+
+
+        if($this->getUser() == NULL) {
+             return $this->redirectToRoute('app_utilisateur_new');
+        }
         $cart = $cartManager->getCurrentCart();
         $commandesFactory->update($cart);
 
