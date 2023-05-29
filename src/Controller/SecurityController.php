@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use App\Entity\Utilisateur;
 
 class SecurityController extends AbstractController
 {
@@ -40,11 +41,14 @@ class SecurityController extends AbstractController
      */
     public function connected(AuthenticationUtils $authenticationUtils): Response
     {
+
+        $utilisateur = $this->getUser();
+        $id = $utilisateur->getIdUtilisateur();
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/logged.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('security/logged.html.twig', ['last_username' => $lastUsername, 'error' => $error, 'id' => $id]);
     }
 }

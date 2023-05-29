@@ -82,23 +82,26 @@ class __TwigTemplate_006808191b30563f34df40fc803d85772a5bdd1e5dd2be433045fc8e461
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produit.detail", ["id" => twig_get_attribute($this->env, $this->source, $context["product"], "idProduit", [], "any", false, false, false, 12)]), "html", null, true);
             echo "\" class=\"btn btn-dark productLink\">
                             <div class=\"card mb-4\">
-                                <img src=\"";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "photo", [], "any", false, false, false, 14), "html", null, true);
+
+                                    <img src=\"";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "photo", [], "any", false, false, false, 15), "html", null, true);
             echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 14), "html", null, true);
-            echo "\" class=\"card-img-top\" width=\"200px\">
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 15), "html", null, true);
+            echo "\" class=\"card-img-top\" widht=\"200px\" height=\"200px\">
+
+
                                 <div class=\"card-body\">
                                     <h5 class=\"card-title\">";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 16), "html", null, true);
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 19), "html", null, true);
             echo "</h5>
 
                                     <div class=\"d-flex justify-content-between align-item-center\">
 
                                         <span class=\"h5 mt-auto\">";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prixht", [], "any", false, false, false, 20), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "prixht", [], "any", false, false, false, 23), "html", null, true);
             echo " €</span>
                                     </div>
                                 </div>
@@ -110,7 +113,7 @@ class __TwigTemplate_006808191b30563f34df40fc803d85772a5bdd1e5dd2be433045fc8e461
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 30
         echo "            </div>
         </div>
 
@@ -135,7 +138,7 @@ class __TwigTemplate_006808191b30563f34df40fc803d85772a5bdd1e5dd2be433045fc8e461
 
     public function getDebugInfo()
     {
-        return array (  114 => 27,  101 => 20,  94 => 16,  87 => 14,  82 => 12,  79 => 11,  75 => 10,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  117 => 30,  104 => 23,  97 => 19,  88 => 15,  82 => 12,  79 => 11,  75 => 10,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -153,7 +156,10 @@ class __TwigTemplate_006808191b30563f34df40fc803d85772a5bdd1e5dd2be433045fc8e461
                     <div class=\"productWrap col-md-4\">
                         <a href=\"{{ path('produit.detail', {id: product.idProduit}) }}\" class=\"btn btn-dark productLink\">
                             <div class=\"card mb-4\">
-                                <img src=\"{{ product.photo }}\" alt=\"{{ product.nom }}\" class=\"card-img-top\" width=\"200px\">
+
+                                    <img src=\"{{ product.photo }}\" alt=\"{{ product.nom }}\" class=\"card-img-top\" widht=\"200px\" height=\"200px\">
+
+
                                 <div class=\"card-body\">
                                     <h5 class=\"card-title\">{{ product.nom }}</h5>
 

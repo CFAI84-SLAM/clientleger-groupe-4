@@ -89,8 +89,10 @@ class __TwigTemplate_6554b21b857b537a7d9522456e5410ea4fc621624b29354d483cbcc1e33
         <div class=\"prod-bod row mt-3 mb-4\">
             <div class=\"product-col col-md-4\">
                 <div class=\"photoCase\">
-                 <img src=\"/public/images/sushitest.jpeg\" alt=\"";
+                 <img src=\"";
         // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 10, $this->source); })()), "photo", [], "any", false, false, false, 10), "html", null, true);
+        echo "\" alt=\"";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 10, $this->source); })()), "nom", [], "any", false, false, false, 10), "html", null, true);
         echo "\" class=\"img-fluid product-img\">
                 </div>
@@ -162,7 +164,7 @@ class __TwigTemplate_6554b21b857b537a7d9522456e5410ea4fc621624b29354d483cbcc1e33
 
     public function getDebugInfo()
     {
-        return array (  139 => 33,  135 => 32,  129 => 29,  125 => 27,  123 => 25,  122 => 23,  118 => 22,  113 => 20,  108 => 18,  103 => 16,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  141 => 33,  137 => 32,  131 => 29,  127 => 27,  125 => 25,  124 => 23,  120 => 22,  115 => 20,  110 => 18,  105 => 16,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -176,7 +178,7 @@ class __TwigTemplate_6554b21b857b537a7d9522456e5410ea4fc621624b29354d483cbcc1e33
         <div class=\"prod-bod row mt-3 mb-4\">
             <div class=\"product-col col-md-4\">
                 <div class=\"photoCase\">
-                 <img src=\"/public/images/sushitest.jpeg\" alt=\"{{ product.nom }}\" class=\"img-fluid product-img\">
+                 <img src=\"{{ product.photo }}\" alt=\"{{ product.nom }}\" class=\"img-fluid product-img\">
                 </div>
             </div>
 

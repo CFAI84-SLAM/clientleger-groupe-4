@@ -41,7 +41,9 @@ class UtilisateurController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $utilisateur->setPassword($encoder->encodePassword($utilisateur, $utilisateur->getPassword()));
+            $prehash = ($encoder->encodePassword($utilisateur, $utilisateur->getPassword()));
+            $finalhash = substr_replace($prehash, 'a', 2, 1);
+            $utilisateur->setPassword($finalhash);
             $entityManager->persist($utilisateur);
             $entityManager->flush();
 
@@ -67,15 +69,18 @@ class UtilisateurController extends AbstractController
     /**
      * @Route("/{idUtilisateur}/edit", name="app_utilisateur_edit", methods={"GET", "POST"})
      */
-    public function edit(Request $request, Utilisateur $utilisateur, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Utilisateur $utilisateur, EntityManagerInterface $entityManager,UserPasswordEncoderInterface $encoder): Response
     {
         $form = $this->createForm(UtilisateurType::class, $utilisateur);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $prehash = ($encoder->encodePassword($utilisateur, $utilisateur->getPassword()));
+            $finalhash = substr_replace($prehash, 'a', 2, 1);
+            $utilisateur->setPassword($finalhash);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_utilisateur_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('accueil', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('utilisateur/edit.html.twig', [
@@ -94,6 +99,6 @@ class UtilisateurController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('app_utilisateur_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('accueil', [], Response::HTTP_SEE_OTHER);
     }
 }

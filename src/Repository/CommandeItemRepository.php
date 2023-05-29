@@ -47,7 +47,7 @@ class CommandeItemRepository extends ServiceEntityRepository
                 SELECT Id_Produit FROM commande_item c 
                 GROUP BY c.Id_Produit
                 ORDER BY SUM(c.quantite) DESC
-                LIMIT 4
+                LIMIT 8
         
         ';
 

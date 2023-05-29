@@ -1,13 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Utilisateur{% endblock %}
+{% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>Edit Utilisateur</h1>
+    <h1>Profil</h1>
 
-    {{ include('utilisateur/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('utilisateur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_utilisateur_index') }}">back to list</a>
+
 
     {{ include('utilisateur/_delete_form.html.twig') }}
+
+    {% block javascript %}
+
+    <script type="text/javascript">
+
+        document.getElementById('utilisateur_password').type =  'password';
+
+
+    </script>
+
+    {% endblock %}
 {% endblock %}

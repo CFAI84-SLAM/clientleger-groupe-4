@@ -27,6 +27,7 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascript' => [$this, 'block_javascript'],
         ];
     }
 
@@ -96,7 +97,40 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
 
     </div>
 
+
+    ";
+        // line 15
+        $this->displayBlock('javascript', $context, $blocks);
+        // line 24
+        echo "
 ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 15
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 16
+        echo "
+    <script type=\"text/javascript\">
+
+        document.getElementById('utilisateur_password').type =  'password';
+
+    </script>
+
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -117,7 +151,7 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
 
     public function getDebugInfo()
     {
-        return array (  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  126 => 16,  116 => 15,  105 => 24,  103 => 15,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -134,6 +168,17 @@ class __TwigTemplate_72263dda920fe4cbf8c2d19a2cc42ee93f93598e200b15bb89d82b752ea
 
 
     </div>
+
+
+    {% block javascript %}
+
+    <script type=\"text/javascript\">
+
+        document.getElementById('utilisateur_password').type =  'password';
+
+    </script>
+
+    {% endblock %}
 
 {% endblock %}
 ", "utilisateur/new.html.twig", "/var/www/clientleger-groupe-4/templates/utilisateur/new.html.twig");

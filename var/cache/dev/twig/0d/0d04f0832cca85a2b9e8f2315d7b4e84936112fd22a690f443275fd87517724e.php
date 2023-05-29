@@ -78,12 +78,17 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
         // line 8
-        echo "
+        echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 <script type=\"text/javascript\">
-   
-    document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
-    document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
-    document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+    \$(document).ready(function() {
+        if(window.location.href.indexOf(\"new\") > -1) {
+            document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
+            document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
+            document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+        }
+
+});
+
 
 </script>
 
@@ -120,12 +125,17 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
 
 
 {% block javascript %}
-
+<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 <script type=\"text/javascript\">
-   
-    document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
-    document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
-    document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+    \$(document).ready(function() {
+        if(window.location.href.indexOf(\"new\") > -1) {
+            document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
+            document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
+            document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+        }
+
+});
+
 
 </script>
 

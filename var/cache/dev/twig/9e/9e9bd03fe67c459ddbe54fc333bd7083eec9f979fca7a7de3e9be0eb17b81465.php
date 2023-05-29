@@ -87,7 +87,7 @@ class __TwigTemplate_12d2b913d0bbc7b1afb5fd773dcb4f937467b7111ecf6d533a3f0d05154
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "photo", [], "any", false, false, false, 14), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "nom", [], "any", false, false, false, 14), "html", null, true);
-            echo "\" class=\"card-img-top\" width=\"200px\">
+            echo "\" class=\"card-img-top\" widht=\"200px\" height=\"200px\">
                                 <div class=\"card-body\">
                                     <h5 class=\"card-title\">";
             // line 16
@@ -153,7 +153,7 @@ class __TwigTemplate_12d2b913d0bbc7b1afb5fd773dcb4f937467b7111ecf6d533a3f0d05154
                     <div class=\"productWrap col-md-4\">
                         <a href=\"{{ path('produit.detail', {id: product.idProduit}) }}\" class=\"btn btn-dark productLink\">
                             <div class=\"card mb-4\">
-                                <img src=\"{{ product.photo }}\" alt=\"{{ product.nom }}\" class=\"card-img-top\" width=\"200px\">
+                                <img src=\"{{ product.photo }}\" alt=\"{{ product.nom }}\" class=\"card-img-top\" widht=\"200px\" height=\"200px\">
                                 <div class=\"card-body\">
                                     <h5 class=\"card-title\">{{ product.nom }}</h5>
 

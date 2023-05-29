@@ -109,9 +109,16 @@ class __TwigTemplate_08beb8374322ace9af898a17c196e3142a4bd87aa40f98f31e1bd2b66f7
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Se déconnecter</a>
         </div>
+
+        <div class=\"mb-3\">
+            <a href=\"utilisateur/";
+            // line 17
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 17, $this->source); })()), "html", null, true);
+            echo "/edit\">Éditer le profil</a>
+        </div>
     ";
         }
-        // line 16
+        // line 20
         echo "
 
 
@@ -137,7 +144,7 @@ class __TwigTemplate_08beb8374322ace9af898a17c196e3142a4bd87aa40f98f31e1bd2b66f7
 
     public function getDebugInfo()
     {
-        return array (  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  122 => 20,  116 => 17,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -155,6 +162,10 @@ class __TwigTemplate_08beb8374322ace9af898a17c196e3142a4bd87aa40f98f31e1bd2b66f7
     {% if app.user %}
         <div class=\"mb-3\">
             Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Se déconnecter</a>
+        </div>
+
+        <div class=\"mb-3\">
+            <a href=\"utilisateur/{{ id }}/edit\">Éditer le profil</a>
         </div>
     {% endif %}
 

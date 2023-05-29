@@ -633,10 +633,6 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\LigneCommandeRepository" class="App\Repository\LigneCommandeRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4783,7 +4779,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.QJbyg1v"/>
+      <argument type="service" id=".service_locator.Ztpx3so"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5747,16 +5743,13 @@
     <service id="security.encoder_factory.generic" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
       <argument type="collection">
         <argument key="Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface" type="collection">
-          <argument key="algorithm">auto</argument>
-          <argument key="migrate_from" type="collection"/>
-          <argument key="hash_algorithm">sha512</argument>
-          <argument key="key_length">40</argument>
-          <argument key="ignore_case">false</argument>
-          <argument key="encode_as_base64">true</argument>
-          <argument key="iterations">5000</argument>
-          <argument key="cost">null</argument>
-          <argument key="memory_cost">null</argument>
-          <argument key="time_cost">null</argument>
+          <argument key="class">Symfony\Component\Security\Core\Encoder\NativePasswordEncoder</argument>
+          <argument key="arguments" type="collection">
+            <argument>null</argument>
+            <argument>null</argument>
+            <argument>null</argument>
+            <argument>2y</argument>
+          </argument>
         </argument>
       </argument>
       <deprecated package="symfony/security-bundle" version="5.3">The "%service_id%" service is deprecated, use "security.password_hasher_factory" instead.</deprecated>
@@ -5879,16 +5872,13 @@
     <service id="security.password_hasher_factory" class="Symfony\Component\PasswordHasher\Hasher\PasswordHasherFactory">
       <argument type="collection">
         <argument key="Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface" type="collection">
-          <argument key="algorithm">auto</argument>
-          <argument key="migrate_from" type="collection"/>
-          <argument key="hash_algorithm">sha512</argument>
-          <argument key="key_length">40</argument>
-          <argument key="ignore_case">false</argument>
-          <argument key="encode_as_base64">true</argument>
-          <argument key="iterations">5000</argument>
-          <argument key="cost">null</argument>
-          <argument key="memory_cost">null</argument>
-          <argument key="time_cost">null</argument>
+          <argument key="class">Symfony\Component\PasswordHasher\Hasher\NativePasswordHasher</argument>
+          <argument key="arguments" type="collection">
+            <argument>null</argument>
+            <argument>null</argument>
+            <argument>null</argument>
+            <argument>2y</argument>
+          </argument>
         </argument>
       </argument>
     </service>
@@ -7921,8 +7911,6 @@
     <service id=".abstract.instanceof.App\Repository\CommandeItemRepository" class="App\Repository\CommandeItemRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CommandesRepository" class="App\Repository\CommandesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CommandesRepository" class="App\Repository\CommandesRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LigneCommandeRepository" class="App\Repository\LigneCommandeRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\LigneCommandeRepository" class="App\Repository\LigneCommandeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProduitRepository" class="App\Repository\ProduitRepository" autowire="true" abstract="true"/>
@@ -8382,6 +8370,14 @@
         <argument key="utilisateur" type="service_closure" id=".errored..service_locator.wxsJsLA.App\Entity\Utilisateur"/>
       </argument>
     </service>
+    <service id=".service_locator.v15EBJB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="encoder" type="service_closure" id="security.user_password_encoder.generic"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="utilisateur" type="service_closure" id=".errored..service_locator.v15EBJB.App\Entity\Utilisateur"/>
+      </argument>
+    </service>
     <service id=".service_locator.ktnpk5h" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8401,7 +8397,7 @@
         <argument key="product" type="service_closure" id=".errored..service_locator.w_v4Yqu.App\Entity\Produit"/>
       </argument>
     </service>
-    <service id=".service_locator.3hCNMwF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.m3yE42V" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CartController::index" type="service_closure" id=".service_locator.b1fmCyc"/>
@@ -8416,7 +8412,7 @@
         <argument key="App\Controller\SecurityController::connected" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\UtilisateurController::delete" type="service_closure" id=".service_locator.ktnpk5h"/>
-        <argument key="App\Controller\UtilisateurController::edit" type="service_closure" id=".service_locator.ktnpk5h"/>
+        <argument key="App\Controller\UtilisateurController::edit" type="service_closure" id=".service_locator.v15EBJB"/>
         <argument key="App\Controller\UtilisateurController::index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\UtilisateurController::new" type="service_closure" id=".service_locator.wGphWPZ"/>
         <argument key="App\Controller\UtilisateurController::show" type="service_closure" id=".service_locator.wxsJsLA"/>
@@ -8438,7 +8434,7 @@
         <argument key="App\Controller\SecurityController:connected" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Controller\UtilisateurController:delete" type="service_closure" id=".service_locator.ktnpk5h"/>
-        <argument key="App\Controller\UtilisateurController:edit" type="service_closure" id=".service_locator.ktnpk5h"/>
+        <argument key="App\Controller\UtilisateurController:edit" type="service_closure" id=".service_locator.v15EBJB"/>
         <argument key="App\Controller\UtilisateurController:index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\UtilisateurController:new" type="service_closure" id=".service_locator.wGphWPZ"/>
         <argument key="App\Controller\UtilisateurController:show" type="service_closure" id=".service_locator.wxsJsLA"/>
@@ -8601,13 +8597,12 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.QJbyg1v" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Ztpx3so" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategorieRepository" type="service_closure" id="App\Repository\CategorieRepository"/>
         <argument key="App\Repository\CommandeItemRepository" type="service_closure" id="App\Repository\CommandeItemRepository"/>
         <argument key="App\Repository\CommandesRepository" type="service_closure" id="App\Repository\CommandesRepository"/>
-        <argument key="App\Repository\LigneCommandeRepository" type="service_closure" id="App\Repository\LigneCommandeRepository"/>
         <argument key="App\Repository\ProductRepository" type="service_closure" id="App\Repository\ProductRepository"/>
         <argument key="App\Repository\ProduitRepository" type="service_closure" id="App\Repository\ProduitRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service_closure" id="App\Repository\ResetPasswordRequestRepository"/>
@@ -9149,12 +9144,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.3hCNMwF"/>
+      <argument type="service" id=".service_locator.m3yE42V"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.3hCNMwF"/>
+      <argument type="service" id=".service_locator.m3yE42V"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9236,6 +9231,7 @@
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.fWUhXRR.App\Entity\Produit" class="App\Entity\Produit"/>
     <service id=".errored..service_locator.wxsJsLA.App\Entity\Utilisateur" class="App\Entity\Utilisateur"/>
+    <service id=".errored..service_locator.v15EBJB.App\Entity\Utilisateur" class="App\Entity\Utilisateur"/>
     <service id=".errored..service_locator.ktnpk5h.App\Entity\Utilisateur" class="App\Entity\Utilisateur"/>
     <service id=".errored..service_locator.JI6ffAS.App\Entity\Commandes" class="App\Entity\Commandes"/>
     <service id=".errored..service_locator.w_v4Yqu.App\Entity\Produit" class="App\Entity\Produit"/>
@@ -10368,7 +10364,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.3hCNMwF"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.m3yE42V"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -10401,8 +10397,9 @@
     <service id=".service_locator.aEOc5ca" alias=".service_locator.fWUhXRR"/>
     <service id=".service_locator.W7rQ2zM" alias=".service_locator.LI1wy7E"/>
     <service id=".service_locator.l_Toyz2" alias=".service_locator.wGphWPZ"/>
+    <service id=".service_locator.jD2JNCt" alias=".service_locator.v15EBJB"/>
     <service id=".service_locator.HRv250C" alias=".service_locator.ktnpk5h"/>
-    <service id=".service_locator.8cfxFKC" alias=".service_locator.3hCNMwF"/>
+    <service id=".service_locator.lANmeEd" alias=".service_locator.m3yE42V"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.tJvYsn8" alias=".service_locator.dM5q7s6"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
@@ -10478,6 +10475,7 @@
     <service id=".service_locator.Er0_7SX" alias=".service_locator.l2QwsaZ"/>
     <service id=".service_locator.Ge4DQzQ" alias=".service_locator.wGphWPZ"/>
     <service id=".service_locator.9A68vkn" alias=".service_locator.wxsJsLA"/>
+    <service id=".service_locator.1.NF3E2" alias=".service_locator.v15EBJB"/>
     <service id=".service_locator.qUDYMom" alias=".service_locator.ktnpk5h"/>
     <service id=".service_locator.2XvbvuF" alias=".service_locator.JI6ffAS"/>
     <service id=".service_locator.oR8cX.7" alias=".service_locator.w_v4Yqu"/>
