@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Utilisateur;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,14 +20,19 @@ class UtilisateurType extends AbstractType
             ->add('password')
             //->add('roles')
             ->add('adresse')
-            ->add('datenaissance')
+            ->add('datenaissance', DateType::class,[
+
+                'widget' => 'choice',
+                'format' => 'MM-dd-yyyy',
+                'years' => $years = range(2023, 1900),
+            ]  )
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'nom' => 'nom',
+            'data_class' => Utilisateur::class,
         ]);
     }
 }

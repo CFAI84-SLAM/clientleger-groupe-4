@@ -87,7 +87,7 @@ class __TwigTemplate_f0efdfc6f852e6859c7961b6747047fa6094a98c4cbc548b1d873cba47e
 
         // line 6
         echo "            <link rel=\"stylesheet\" href=";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Views/test.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Views/style.css"), "html", null, true);
         echo ">
         ";
         
@@ -189,7 +189,7 @@ class __TwigTemplate_f0efdfc6f852e6859c7961b6747047fa6094a98c4cbc548b1d873cba47e
     <head>
         <meta charset=\"UTF-8\">
         {% block stylesheets %}
-            <link rel=\"stylesheet\" href={{ asset('Views/test.css') }}>
+            <link rel=\"stylesheet\" href={{ asset('Views/style.css') }}>
         {% endblock %}
 
     </head>

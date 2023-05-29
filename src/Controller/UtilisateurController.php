@@ -17,21 +17,10 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
  */
 class UtilisateurController extends AbstractController
 {
-    /**
-     * @Route("/", name="app_utilisateur_index", methods={"GET"})
-     */
-    public function index(EntityManagerInterface $entityManager): Response
-    {
-        $utilisateurs = $entityManager
-            ->getRepository(Utilisateur::class)
-            ->findAll();
 
-        return $this->render('utilisateur/index.html.twig', [
-            'utilisateurs' => $utilisateurs,
-        ]);
-    }
 
     /**
+     * Formulaire de creation d'utilisateur
      * @Route("/new", name="app_utilisateur_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $encoder): Response
@@ -56,15 +45,7 @@ class UtilisateurController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{idUtilisateur}", name="app_utilisateur_show", methods={"GET"})
-     */
-    public function show(Utilisateur $utilisateur): Response
-    {
-        return $this->render('utilisateur/show.html.twig', [
-            'utilisateur' => $utilisateur,
-        ]);
-    }
+
 
     /**
      * @Route("/{idUtilisateur}/edit", name="app_utilisateur_edit", methods={"GET", "POST"})

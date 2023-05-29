@@ -19,6 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
+     * Affichage de la page du détail produit
      * @Route("/produit/{id}", name="produit.detail")
      */
     public function detail(Produit $product, Request $request, CartManager $cartManager): Response

@@ -20,6 +20,7 @@ use App\Entity\Utilisateur;
 class CartController extends AbstractController
 {
     /**
+     * Gestion de l'affichage du panier
      * @Route("/panier", name="panier")
      */
     public function index(CartManager $cartManager, Request $request, EntityManagerInterface $entityManager): Response

@@ -81,14 +81,13 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
         echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 <script type=\"text/javascript\">
     \$(document).ready(function() {
-        if(window.location.href.indexOf(\"new\") > -1) {
-            document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
-            document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
-            document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
-        }
-
-});
-
+    if(window.location.href.indexOf(\"new\") > -1) {
+    document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+}
+    });
+    
 
 </script>
 
@@ -128,14 +127,13 @@ class __TwigTemplate_f46f67f3bd8702b9894c99a5893bcf4e76f01f1111c72989e735b107506
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 <script type=\"text/javascript\">
     \$(document).ready(function() {
-        if(window.location.href.indexOf(\"new\") > -1) {
-            document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
-            document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
-            document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
-        }
-
-});
-
+    if(window.location.href.indexOf(\"new\") > -1) {
+    document.querySelector(\"input[name = 'utilisateur[nom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[prenom]']\").value = '';
+    document.querySelector(\"input[name = 'utilisateur[adresse]']\").value = '';
+}
+    });
+    
 
 </script>
 

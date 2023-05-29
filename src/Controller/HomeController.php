@@ -12,6 +12,7 @@ use App\Repository\CommandeItemRepository;
 
 class HomeController extends AbstractController {
     /**
+     * Affichage page d'accueil
      * @Route("/", name="accueil")
      */
 
@@ -25,6 +26,7 @@ class HomeController extends AbstractController {
 
 
     /**
+     * Affichage page des entrées
      * @Route("/entrees", name="entrees")
      */
 
@@ -39,6 +41,7 @@ class HomeController extends AbstractController {
 
 
     /**
+     * Affichage page des plats
      * @Route("/plats", name="plats")
      */
 
@@ -53,6 +56,7 @@ class HomeController extends AbstractController {
 
 
     /**
+     * Affichage page des desserts
      * @Route("/desserts", name="desserts")
      */
 

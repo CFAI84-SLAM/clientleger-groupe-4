@@ -21,6 +21,7 @@ use App\Entity\Utilisateur;
 class CommandesController extends AbstractController
 {
     /**
+     * Validation d'une commande
      * @Route("/commande", name="commande")
      */
     public function index(CartManager $cartManager, Request $request, EntityManagerInterface $entityManager, CommandesFactory $commandesFactory): Response

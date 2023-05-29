@@ -11,6 +11,7 @@ use App\Entity\Utilisateur;
 class SecurityController extends AbstractController
 {
     /**
+     * Affichage formulaire de connection
      * @Route("/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
@@ -28,6 +29,7 @@ class SecurityController extends AbstractController
     }
 
     /**
+     *
      * @Route("/logout", name="app_logout")
      */
     public function logout(): void
@@ -37,6 +39,7 @@ class SecurityController extends AbstractController
 
 
     /**
+     * Utilisateur connecté parametres
      * @Route("/logged", name="app_logged")
      */
     public function connected(AuthenticationUtils $authenticationUtils): Response
