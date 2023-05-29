@@ -189,18 +189,24 @@ $context["item"], "quantite", [], "any", false, false, false, 34), "vars", [], "
             // line 62
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 62, $this->source); })()), "tva", [], "any", false, false, false, 62), "html", null, true);
             echo " €</b></span>
+                            </li><li class=\"cart-total list-group-item d-flex justify-content-between\">
+                                <div><b>Total HT</b></div>
+                                <span><b>";
+            // line 65
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 65, $this->source); })()), "totalHT", [], "any", false, false, false, 65), "html", null, true);
+            echo " €</b></span>
                             </li>
                             <li class=\"cart-total list-group-item d-flex justify-content-between\">
                                 <div><b>Total TTC</b></div>
                                 <span><b>";
-            // line 66
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 66, $this->source); })()), "total", [], "any", false, false, false, 66), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cart"]) || array_key_exists("cart", $context) ? $context["cart"] : (function () { throw new RuntimeError('Variable "cart" does not exist.', 69, $this->source); })()), "total", [], "any", false, false, false, 69), "html", null, true);
             echo " €</b></span>
                             </li>
                         </ul>
                         <div class=\"card-body\">
                             <a href=\"";
-            // line 70
+            // line 73
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commande");
             echo "\" class=\"btn btn-warning w-100\">
                                 <div class=\"orderButton\">Commander</div>
@@ -216,16 +222,16 @@ $context["item"], "quantite", [], "any", false, false, false, 34), "vars", [], "
 
         ";
         } else {
-            // line 83
-            echo "            <div class=\"alert alert-info\">
-                Votre panier est vide. Rendez vous à la <a href=\"";
-            // line 84
+            // line 86
+            echo "            <div class=\"alert alert-info loggedText\">
+                Votre panier est vide. <a href=\"";
+            // line 87
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
             echo "\">liste de produit</a>.
             </div>
         ";
         }
-        // line 87
+        // line 90
         echo "    </div>
 
 
@@ -250,7 +256,7 @@ $context["item"], "quantite", [], "any", false, false, false, 34), "vars", [], "
 
     public function getDebugInfo()
     {
-        return array (  229 => 87,  223 => 84,  220 => 83,  204 => 70,  197 => 66,  190 => 62,  178 => 53,  174 => 52,  170 => 50,  158 => 44,  152 => 41,  146 => 38,  142 => 36,  140 => 34,  139 => 32,  132 => 28,  126 => 25,  122 => 23,  118 => 22,  111 => 18,  107 => 17,  99 => 12,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  235 => 90,  229 => 87,  226 => 86,  210 => 73,  203 => 69,  196 => 65,  190 => 62,  178 => 53,  174 => 52,  170 => 50,  158 => 44,  152 => 41,  146 => 38,  142 => 36,  140 => 34,  139 => 32,  132 => 28,  126 => 25,  122 => 23,  118 => 22,  111 => 18,  107 => 17,  99 => 12,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -317,6 +323,9 @@ $context["item"], "quantite", [], "any", false, false, false, 34), "vars", [], "
                             <li class=\"cart-total list-group-item d-flex justify-content-between\">
                                 <div><b>TVA 20%</b></div>
                                 <span><b>{{ cart.tva }} €</b></span>
+                            </li><li class=\"cart-total list-group-item d-flex justify-content-between\">
+                                <div><b>Total HT</b></div>
+                                <span><b>{{ cart.totalHT }} €</b></span>
                             </li>
                             <li class=\"cart-total list-group-item d-flex justify-content-between\">
                                 <div><b>Total TTC</b></div>
@@ -337,8 +346,8 @@ $context["item"], "quantite", [], "any", false, false, false, 34), "vars", [], "
 
 
         {% else %}
-            <div class=\"alert alert-info\">
-                Votre panier est vide. Rendez vous à la <a href=\"{{ path('accueil') }}\">liste de produit</a>.
+            <div class=\"alert alert-info loggedText\">
+                Votre panier est vide. <a href=\"{{ path('accueil') }}\">liste de produit</a>.
             </div>
         {% endif %}
     </div>

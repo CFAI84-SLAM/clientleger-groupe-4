@@ -101,24 +101,26 @@ class __TwigTemplate_08beb8374322ace9af898a17c196e3142a4bd87aa40f98f31e1bd2b66f7
         // line 11
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11)) {
             // line 12
-            echo "        <div class=\"mb-3\">
-            Vous êtes connecté en tant que ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "userIdentifier", [], "any", false, false, false, 13), "html", null, true);
+            echo "        <div class=\"loggedText\">
+            <div class=\"loggedf\">
+                Vous êtes connecté en tant que ";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), "userIdentifier", [], "any", false, false, false, 14), "html", null, true);
             echo ", <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Se déconnecter</a>
-        </div>
+            </div>
 
-        <div class=\"mb-3\">
-            <a href=\"utilisateur/";
-            // line 17
-            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 17, $this->source); })()), "html", null, true);
+            <div class=\"loggedf\">
+                <a href=\"utilisateur/";
+            // line 18
+            echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 18, $this->source); })()), "html", null, true);
             echo "/edit\">Éditer le profil</a>
+            </div>
         </div>
     ";
         }
-        // line 20
+        // line 22
         echo "
 
 
@@ -144,7 +146,7 @@ class __TwigTemplate_08beb8374322ace9af898a17c196e3142a4bd87aa40f98f31e1bd2b66f7
 
     public function getDebugInfo()
     {
-        return array (  122 => 20,  116 => 17,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  124 => 22,  117 => 18,  108 => 14,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -160,12 +162,14 @@ class __TwigTemplate_08beb8374322ace9af898a17c196e3142a4bd87aa40f98f31e1bd2b66f7
     {% endif %}
 
     {% if app.user %}
-        <div class=\"mb-3\">
-            Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Se déconnecter</a>
-        </div>
+        <div class=\"loggedText\">
+            <div class=\"loggedf\">
+                Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href=\"{{ path('app_logout') }}\">Se déconnecter</a>
+            </div>
 
-        <div class=\"mb-3\">
-            <a href=\"utilisateur/{{ id }}/edit\">Éditer le profil</a>
+            <div class=\"loggedf\">
+                <a href=\"utilisateur/{{ id }}/edit\">Éditer le profil</a>
+            </div>
         </div>
     {% endif %}
 

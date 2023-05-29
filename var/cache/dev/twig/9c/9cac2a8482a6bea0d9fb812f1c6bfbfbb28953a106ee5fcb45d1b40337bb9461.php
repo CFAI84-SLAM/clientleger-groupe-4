@@ -86,22 +86,28 @@ class __TwigTemplate_73babe48c6a0ba847160a8b152c8f69958ee452797be368293bd8b61ae0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Profil</h1>
-
-    ";
+        echo "    <h1 class =\"centered\">Profil</h1>
+    <div class=\"loggedText\">
+        ";
         // line 8
         echo twig_include($this->env, $context, "utilisateur/_form.html.twig", ["button_label" => "Modifier"]);
         echo "
 
 
 
-    ";
-        // line 12
+
+
+    </div>
+    <div class=\"bcentered\">
+        ";
+        // line 16
         echo twig_include($this->env, $context, "utilisateur/_delete_form.html.twig");
         echo "
+    </div>
+
 
     ";
-        // line 14
+        // line 20
         $this->displayBlock('javascript', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -120,7 +126,7 @@ class __TwigTemplate_73babe48c6a0ba847160a8b152c8f69958ee452797be368293bd8b61ae0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 15
+        // line 21
         echo "
     <script type=\"text/javascript\">
 
@@ -150,7 +156,7 @@ class __TwigTemplate_73babe48c6a0ba847160a8b152c8f69958ee452797be368293bd8b61ae0
 
     public function getDebugInfo()
     {
-        return array (  124 => 15,  105 => 14,  100 => 12,  93 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  130 => 21,  111 => 20,  104 => 16,  93 => 8,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -160,13 +166,19 @@ class __TwigTemplate_73babe48c6a0ba847160a8b152c8f69958ee452797be368293bd8b61ae0
 {% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>Profil</h1>
+    <h1 class =\"centered\">Profil</h1>
+    <div class=\"loggedText\">
+        {{ include('utilisateur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('utilisateur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
 
 
-    {{ include('utilisateur/_delete_form.html.twig') }}
+
+    </div>
+    <div class=\"bcentered\">
+        {{ include('utilisateur/_delete_form.html.twig') }}
+    </div>
+
 
     {% block javascript %}
 

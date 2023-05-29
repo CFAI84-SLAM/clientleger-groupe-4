@@ -155,7 +155,7 @@ body {
 .col-md-5 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     margin-right: 7%;
 }
 
@@ -166,6 +166,26 @@ body {
 .form-control{
     max-width: 60%;
 }
+
+.connForm {
+    width: 360px;
+}
+.loggedText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loggedf {
+    margin: 2%;
+}
+.bcentered {
+    position: relative;
+    left: 95%;
+    margin: 1% 0 1% 0;
+    transform: translate(-50%, 0%);
+}
+
 
 .card-header.d-flex {
     margin: 3%;

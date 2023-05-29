@@ -214,6 +214,24 @@ class Commandes
     }
 
     /**
+     * Calculates the order total HT.
+     *
+     * @return float
+     */
+    public function getTotalHT(): float
+    {
+        $totalht = 0;
+
+        foreach ($this->getItems() as $produit) {
+            $totalht += $produit->getTotalHT();
+        }
+
+        return $totalht;
+    }
+
+
+
+    /**
      * Calculates the order tva.
      *
      * @return float

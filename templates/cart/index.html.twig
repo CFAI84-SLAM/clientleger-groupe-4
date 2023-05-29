@@ -60,6 +60,9 @@
                             <li class="cart-total list-group-item d-flex justify-content-between">
                                 <div><b>TVA 20%</b></div>
                                 <span><b>{{ cart.tva }} €</b></span>
+                            </li><li class="cart-total list-group-item d-flex justify-content-between">
+                                <div><b>Total HT</b></div>
+                                <span><b>{{ cart.totalHT }} €</b></span>
                             </li>
                             <li class="cart-total list-group-item d-flex justify-content-between">
                                 <div><b>Total TTC</b></div>
@@ -80,8 +83,8 @@
 
 
         {% else %}
-            <div class="alert alert-info">
-                Votre panier est vide. Rendez vous à la <a href="{{ path('accueil') }}">liste de produit</a>.
+            <div class="alert alert-info loggedText">
+                Votre panier est vide. <a href="{{ path('accueil') }}">liste de produit</a>.
             </div>
         {% endif %}
     </div>

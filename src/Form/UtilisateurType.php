@@ -10,6 +10,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UtilisateurType extends AbstractType
 {
+
+    /*
+     * Formulaire création d'un compte
+     *
+     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder

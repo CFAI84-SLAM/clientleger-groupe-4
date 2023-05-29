@@ -90,9 +90,7 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
         // line 7
         if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 7, $this->source); })())) {
             // line 8
-            echo "        <div class=\"alert alert-danger\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })()), "messageKey", [], "any", false, false, false, 8), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 8, $this->source); })()), "messageData", [], "any", false, false, false, 8), "security"), "html", null, true);
-            echo "</div>
+            echo "        <div class=\"alert alert-danger\">test</div>
     ";
         }
         // line 10
@@ -121,11 +119,11 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
             <input type=\"email\" value=\"";
         // line 22
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 22, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
+        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control connForm\" autocomplete=\"email\" required autofocus>
         </div>
     <div class=\"log-form\">
         <label for=\"inputPassword\">Mot de passe</label>
-        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control connForm\" autocomplete=\"current-password\" required>
     </div>
 
 
@@ -172,7 +170,7 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
 
     public function getDebugInfo()
     {
-        return array (  148 => 49,  141 => 44,  135 => 31,  123 => 22,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  146 => 49,  139 => 44,  133 => 31,  121 => 22,  113 => 16,  105 => 13,  102 => 12,  100 => 11,  97 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,7 +182,7 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
 {% block body %}
 <form method=\"post\">
     {% if error %}
-        <div class=\"alert alert-danger\">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div class=\"alert alert-danger\">test</div>
     {% endif %}
 
     {% if app.user %}
@@ -198,11 +196,11 @@ class __TwigTemplate_150171e0911f772b28a3ffc84aa78e1857e5f43643a215c478fb15c9ac8
     <h1 class=\"h3 mb-3 font-weight-normal\">Se connecter</h1>
         <div class=\"log-form\">
             <label for=\"inputEmail\">Email</label>
-            <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
+            <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control connForm\" autocomplete=\"email\" required autofocus>
         </div>
     <div class=\"log-form\">
         <label for=\"inputPassword\">Mot de passe</label>
-        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
+        <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control connForm\" autocomplete=\"current-password\" required>
     </div>
 
 

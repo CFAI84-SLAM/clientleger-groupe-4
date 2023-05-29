@@ -3,13 +3,19 @@
 {% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>Profil</h1>
+    <h1 class ="centered">Profil</h1>
+    <div class="loggedText">
+        {{ include('utilisateur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    {{ include('utilisateur/_form.html.twig', {'button_label': 'Modifier'}) }}
 
 
 
-    {{ include('utilisateur/_delete_form.html.twig') }}
+
+    </div>
+    <div class="bcentered">
+        {{ include('utilisateur/_delete_form.html.twig') }}
+    </div>
+
 
     {% block javascript %}
 

@@ -85,7 +85,11 @@ class __TwigTemplate_99d6b40bb10b331d900853e4d0b7c304b8779818314acf993283da626b8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div>commande validée</div>
+        echo "    <h1 class=\"centered\">commande validée</h1>
+    <a class=\"loggedText\" href=\"";
+        // line 7
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
+        echo "\">Retour à la boutique</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -107,7 +111,7 @@ class __TwigTemplate_99d6b40bb10b331d900853e4d0b7c304b8779818314acf993283da626b8
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -117,7 +121,8 @@ class __TwigTemplate_99d6b40bb10b331d900853e4d0b7c304b8779818314acf993283da626b8
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-    <div>commande validée</div>
+    <h1 class=\"centered\">commande validée</h1>
+    <a class=\"loggedText\" href=\"{{ path('accueil') }}\">Retour à la boutique</a>
 {% endblock %}
 ", "commande/index.html.twig", "/var/www/clientleger-groupe-4/templates/commande/index.html.twig");
     }
