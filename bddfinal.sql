@@ -26,7 +26,7 @@ CREATE TABLE `Categorie` (
   `Id_Categorie` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id_Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `Categorie` (
 
 LOCK TABLES `Categorie` WRITE;
 /*!40000 ALTER TABLE `Categorie` DISABLE KEYS */;
-INSERT INTO `Categorie` VALUES (21,'entrée'),(22,'plat'),(23,'dessert');
+INSERT INTO `Categorie` VALUES (1,'entrée'),(2,'plat'),(3,'dessert');
 /*!40000 ALTER TABLE `Categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `Commandes` (
   KEY `Id_Utilisateur_1` (`Id_Utilisateur_1`),
   CONSTRAINT `Commandes_ibfk_1` FOREIGN KEY (`Id_Utilisateur`) REFERENCES `Utilisateur` (`Id_Utilisateur`),
   CONSTRAINT `Commandes_ibfk_2` FOREIGN KEY (`Id_Utilisateur_1`) REFERENCES `Utilisateur` (`Id_Utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,8 +66,34 @@ CREATE TABLE `Commandes` (
 
 LOCK TABLES `Commandes` WRITE;
 /*!40000 ALTER TABLE `Commandes` DISABLE KEYS */;
-INSERT INTO `Commandes` VALUES (19,'en préparation','2023-05-29 12:07:55',26,NULL),(20,'en préparation','2023-05-29 12:08:37',26,NULL),(21,'en préparation','2023-05-29 12:08:54',26,NULL);
 /*!40000 ALTER TABLE `Commandes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Ligne_Commande`
+--
+
+DROP TABLE IF EXISTS `Ligne_Commande`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Ligne_Commande` (
+  `Id_Produit` int(11) NOT NULL,
+  `Id_Commandes` int(11) NOT NULL,
+  PRIMARY KEY (`Id_Produit`,`Id_Commandes`),
+  KEY `IDX_562ADC577D87F1B` (`Id_Produit`),
+  KEY `IDX_562ADC52F21CD50` (`Id_Commandes`),
+  CONSTRAINT `FK_562ADC52F21CD50` FOREIGN KEY (`Id_Commandes`) REFERENCES `Commandes` (`Id_Commandes`),
+  CONSTRAINT `FK_562ADC577D87F1B` FOREIGN KEY (`Id_Produit`) REFERENCES `Produit` (`Id_Produit`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Ligne_Commande`
+--
+
+LOCK TABLES `Ligne_Commande` WRITE;
+/*!40000 ALTER TABLE `Ligne_Commande` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Ligne_Commande` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -87,7 +113,7 @@ CREATE TABLE `Produit` (
   PRIMARY KEY (`Id_Produit`),
   KEY `Id_Categorie` (`Id_Categorie`),
   CONSTRAINT `FK_E618D5BB53883348` FOREIGN KEY (`Id_Categorie`) REFERENCES `Categorie` (`Id_Categorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +122,7 @@ CREATE TABLE `Produit` (
 
 LOCK TABLES `Produit` WRITE;
 /*!40000 ALTER TABLE `Produit` DISABLE KEYS */;
-INSERT INTO `Produit` VALUES (89,'Salade Choux',8.00,20.00,'/public/images/salchoux.jpg',21),(90,'Salade Wakame',7.00,20.00,'/public/images/salwakame.jpg',21),(91,'Salade Fève de soja',7.00,20.00,'/public/images/salsoja.jpg',21),(92,'Salade Crevettes',6.00,20.00,'/public/images/salcrev.jpg',21),(93,'Soupe Miso',9.00,20.00,'/public/images/miso.jpg',21),(94,'Ramen crevettes',10.00,20.00,'/public/images/ramcrev.jpg',21),(95,'Ramen Poulet',10.00,20.00,'/public/images/rampoulet.jpg',21),(96,'Makis',10.00,20.00,'/public/images/makis.jpg',22),(97,'California Rolls',15.00,20.00,'/public/images/california.jpg',22),(98,'Spring Rolls',10.00,20.00,'/public/images/spring.jpg',22),(99,'Sushi Saumon',19.00,20.00,'/public/images/sushisaumon.jpg',22),(100,'Sushi Thon',10.00,20.00,'/public/images/sushithon.jpg',22),(101,'Sushi Crevettes',19.00,20.00,'/public/images/sushicrevettes.jpg',22),(102,'Sushi Daurade',17.00,20.00,'/public/images/sushidaurade.jpg',22),(103,'Sushi Anguille',15.00,20.00,'/public/images/sushianguille.jpg',22),(104,'Moelleux Chocolat',6.00,20.00,'/public/images/moelleux.jpg',23),(105,'Maki Nutella banane',6.00,20.00,'/public/images/nutban.jpg',23),(106,'Crispy Nutella pané',7.00,20.00,'/public/images/crispy.jpg',23);
+INSERT INTO `Produit` VALUES (1,'Salade Choux',10.00,20.00,'images/salchoux.jpg',1),(2,'Salade Wakame',6.00,20.00,'images/salwakame.jpg',1),(3,'Salade Fève de soja',6.00,20.00,'images/salsoja.jpg',1),(4,'Salade Crevettes',8.00,20.00,'images/salcrev.jpg',1),(5,'Soupe Miso',6.00,20.00,'images/miso.jpg',1),(6,'Ramen crevettes',6.00,20.00,'images/ramcrev.jpg',1),(7,'Ramen Poulet',8.00,20.00,'images/rampoulet.jpg',1),(8,'Makis',14.00,20.00,'images/makis.jpg',2),(9,'California Rolls',19.00,20.00,'images/california.jpg',2),(10,'Spring Rolls',17.00,20.00,'images/spring.jpg',2),(11,'Sushi Saumon',18.00,20.00,'images/sushisaumon.jpg',2),(12,'Sushi Thon',13.00,20.00,'images/sushithon.jpg',2),(13,'Sushi Crevettes',13.00,20.00,'images/sushicrevettes.jpg',2),(14,'Sushi Daurade',18.00,20.00,'images/sushidaurade.jpg',2),(15,'Sushi Anguille',12.00,20.00,'images/sushianguille.jpg',2),(16,'Moelleux Chocolat',6.00,20.00,'images/moelleux.jpg',3),(17,'Maki Nutella banane',7.00,20.00,'images/nutban.jpg',3),(18,'Crispy Nutella pané',5.00,20.00,'images/crispy.jpg',3);
 /*!40000 ALTER TABLE `Produit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +145,7 @@ CREATE TABLE `Utilisateur` (
   `dateNaissance` date DEFAULT '1000-01-01',
   PRIMARY KEY (`Id_Utilisateur`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +154,7 @@ CREATE TABLE `Utilisateur` (
 
 LOCK TABLES `Utilisateur` WRITE;
 /*!40000 ALTER TABLE `Utilisateur` DISABLE KEYS */;
-INSERT INTO `Utilisateur` VALUES (24,'admin','root',676511451,'admin@fastsushi.com','$2a$04$cjPn5uOQg9yK5qFcZ.nx4Or/LfQDyNzpiCXUOE6OGSKNqf7Dpy7bO','[\"ROLE_ADMIN\"]','5 rue des admins','1989-05-08'),(25,'préparateur','fastsushi',676511451,'preparateur@fastsushi.com','$2a$04$rCk/RgYKZGNW75xLcS/IO.ysIPuMKZgFTo3Dt9YRWjbw8eEKk8OdW','[\"ROLE_PREP\"]','3 allées des préparateurs','2000-06-12'),(26,'client','fastsushi',676511451,'client@fastsushi.com','$2a$04$ERk3wIqe7ZkUnqHWKfGCrOHGAH30JYLjD0lOBhJZUrI9xHunewJjO','[\"ROLE_USER\"]','12 rue du client','2002-01-01');
+INSERT INTO `Utilisateur` VALUES (1,'admin','root',676511451,'admin@fastsushi.com','$2a$04$gYGrBoZSHP0rqY9.yTJCN.cPL/59Ut6Vb6ODaA.4Blxr9VkU6a4Fq','[\"ROLE_ADMIN\"]','5 rue des admins','1989-05-08'),(2,'préparateur','fastsushi',676511451,'preparateur@fastsushi.com','$2a$04$1Xi7yCgEl7ypi5BxF5WCE.UbixITtM5UUHRLYCnk9tDT4gNFVCnVS','[\"ROLE_PREP\"]','3 allées des préparateurs','2000-06-12'),(3,'client','fastsushi',676511451,'client@fastsushi.com','$2a$04$lTgc20sMaPq/1xSnz.0Y/.AZ.ls6xIWYz6qDS9oh/5dsbPKElh4a6','[\"ROLE_USER\"]','12 rue du client','2002-01-01');
 /*!40000 ALTER TABLE `Utilisateur` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +175,7 @@ CREATE TABLE `commande_item` (
   KEY `IDX_747724FD2F21CD50` (`Id_Commandes`),
   CONSTRAINT `FK_747724FD2F21CD50` FOREIGN KEY (`Id_Commandes`) REFERENCES `Commandes` (`Id_Commandes`),
   CONSTRAINT `FK_747724FD77D87F1B` FOREIGN KEY (`Id_Produit`) REFERENCES `Produit` (`Id_Produit`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +184,6 @@ CREATE TABLE `commande_item` (
 
 LOCK TABLES `commande_item` WRITE;
 /*!40000 ALTER TABLE `commande_item` DISABLE KEYS */;
-INSERT INTO `commande_item` VALUES (29,10,99,19),(30,15,102,19),(31,2,94,20),(32,1,106,20),(33,1,105,21),(34,1,92,21);
 /*!40000 ALTER TABLE `commande_item` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-29 12:32:15
+-- Dump completed on 2023-05-30  2:07:33

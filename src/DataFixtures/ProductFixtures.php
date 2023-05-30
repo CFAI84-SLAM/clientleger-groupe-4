@@ -15,32 +15,32 @@ class ProductFixtures extends Fixture
 
                 case 1:
                     $nom = "Salade Choux";
-                    $photo = '/public/images/salchoux.jpg';
+                    $photo = 'images/salchoux.jpg';
                     break;
 
                 case 2:
                     $nom = "Salade Wakame";
-                    $photo = '/public/images/salwakame.jpg';
+                    $photo = 'images/salwakame.jpg';
                     break;
                 case 3:
                     $nom = "Salade Fève de soja";
-                    $photo = '/public/images/salsoja.jpg';
+                    $photo = 'images/salsoja.jpg';
                     break;
                 case 4:
                     $nom = "Salade Crevettes";
-                    $photo = '/public/images/salcrev.jpg';
+                    $photo = 'images/salcrev.jpg';
                     break;
                 case 5:
                     $nom = "Soupe Miso";
-                    $photo = '/public/images/miso.jpg';
+                    $photo = 'images/miso.jpg';
                     break;
                 case 6:
                     $nom = "Ramen crevettes";
-                    $photo = '/public/images/ramcrev.jpg';
+                    $photo = 'images/ramcrev.jpg';
                     break;
                 case 7:
                     $nom = "Ramen Poulet";
-                    $photo = '/public/images/rampoulet.jpg';
+                    $photo = 'images/rampoulet.jpg';
                     break;
             }
 
@@ -60,36 +60,36 @@ class ProductFixtures extends Fixture
 
                 case 1:
                     $nom = "Makis";
-                    $photo = '/public/images/makis.jpg';
+                    $photo = 'images/makis.jpg';
                     break;
 
                 case 2:
                     $nom = "California Rolls";
-                    $photo = '/public/images/california.jpg';
+                    $photo = 'images/california.jpg';
                     break;
                 case 3:
                     $nom = "Spring Rolls";
-                    $photo = '/public/images/spring.jpg';
+                    $photo = 'images/spring.jpg';
                     break;
                 case 4:
                     $nom = "Sushi Saumon";
-                    $photo = '/public/images/sushisaumon.jpg';
+                    $photo = 'images/sushisaumon.jpg';
                     break;
                 case 5:
                     $nom = "Sushi Thon";
-                    $photo = '/public/images/sushithon.jpg';
+                    $photo = 'images/sushithon.jpg';
                     break;
                 case 6:
                     $nom = "Sushi Crevettes";
-                    $photo = '/public/images/sushicrevettes.jpg';
+                    $photo = 'images/sushicrevettes.jpg';
                     break;
                 case 7:
                     $nom = "Sushi Daurade";
-                    $photo = '/public/images/sushidaurade.jpg';
+                    $photo = 'images/sushidaurade.jpg';
                     break;
                 case 8:
                     $nom = "Sushi Anguille";
-                    $photo = '/public/images/sushianguille.jpg';
+                    $photo = 'images/sushianguille.jpg';
                     break;
             }
 
@@ -109,16 +109,16 @@ class ProductFixtures extends Fixture
 
                 case 1:
                     $nom = "Moelleux Chocolat";
-                    $photo = '/public/images/moelleux.jpg';
+                    $photo = 'images/moelleux.jpg';
                     break;
 
                 case 2:
                     $nom = "Maki Nutella banane";
-                    $photo = '/public/images/nutban.jpg';
+                    $photo = 'images/nutban.jpg';
                     break;
                 case 3:
                     $nom = "Crispy Nutella pané";
-                    $photo = '/public/images/crispy.jpg';
+                    $photo = 'images/crispy.jpg';
                     break;
             }
 
