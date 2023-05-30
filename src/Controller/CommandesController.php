@@ -29,7 +29,7 @@ class CommandesController extends AbstractController
 
 
         if($this->getUser() == NULL) {
-             return $this->redirectToRoute('app_utilisateur_new');
+             return $this->redirectToRoute('app_login');
         }
         $cart = $cartManager->getCurrentCart();
         $commandesFactory->update($cart);
