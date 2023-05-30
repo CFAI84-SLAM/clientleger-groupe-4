@@ -159,6 +159,11 @@ body {
     margin-right: 7%;
 }
 
+.sf-toolbar {
+    display: none !important;
+}
+
+
 .priceTotal {
     margin-top: 90%;
 }
